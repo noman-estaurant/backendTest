@@ -1,0 +1,192 @@
+#page1 {
+  position: absolute;
+  width: 100vw;
+  height: 185px;
+  left: 0px;
+  top: 95px;
+}
+#page1 #credit img {
+  position: absolute;
+  left: 48px;
+}
+#page1 #credit .shape {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 29px;
+  height: 165px;
+  border-top-left-radius: 21.5px;
+  border-bottom-left-radius: 21.5px;
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+}
+
+#page2 {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  left: 100%;
+  top: 95px;
+  height: 185px;
+}
+#page2 #visa img {
+  position: absolute;
+  left: 48px;
+}
+#page2 #visa .shape {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 29px;
+  height: 165px;
+  border-top-right-radius: 21.5px;
+  border-bottom-right-radius: 21.5px;
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+}
+
+.main {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
+}
+.main .swiper-container {
+  margin-top: 100px;
+  width: 100%;
+  height: 175px;
+}
+.main .swiper-container #credit .shape {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 29px;
+  height: 165px;
+  border-top-left-radius: 21.5px;
+  border-bottom-left-radius: 21.5px;
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+}
+.main .swiper-container #visa .shape {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 29px;
+  height: 165px;
+  border-top-right-radius: 21.5px;
+  border-bottom-right-radius: 21.5px;
+  background-color: #e0e0e0;
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+}
+
+.data {
+  text-align: left;
+  margin-left: 60px;
+  margin-top: 50px;
+}
+.data .total {
+  font-size: 17px;
+  font-weight: 600;
+}
+.data .total .howmuch {
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.data .cardno {
+  padding-top: 23px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.data .cardno .box {
+  display: flex;
+}
+.data .cardno .box .input-border {
+  position: relative;
+  margin-top: 10px;
+  margin-left: -9px;
+  margin-right: 20px;
+  width: 60px;
+  height: 26px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+.data .cardno .box .input-border input {
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  margin: auto;
+  z-index: 2;
+  border: 0;
+  border-radius: 21.5px;
+  width: 57px;
+  height: 22px;
+}
+.data .carddate {
+  padding-top: 23px;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+.data .carddate .box {
+  display: flex;
+}
+.data .carddate .box .input-border {
+  position: relative;
+  margin-top: 10px;
+  margin-left: -9px;
+  margin-right: 80px;
+  width: 60px;
+  height: 26px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+.data .carddate .box .input-border input {
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  margin: auto;
+  z-index: 2;
+  border: 0;
+  border-radius: 21.5px;
+  width: 57px;
+  height: 22px;
+}
+.data .carddate .box .input-border p {
+  position: absolute;
+  top: 5px;
+  left: 65px;
+}
+
+.button-border {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 42px;
+  text-align: center;
+  line-height: 43px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 285px;
+  height: 43px;
+  color: white;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+.button-border .button {
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  z-index: 2;
+  margin: auto;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  width: 282px;
+  height: 40px;
+  border-radius: 21.5px;
+  background: white;
+}

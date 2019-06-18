@@ -1,0 +1,141 @@
+.checklist {
+  margin: 0 auto;
+  margin-top: 85px;
+  width: 331px;
+  height: 553px;
+  z-index: 5px;
+  bottom: 0px;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(19, 0, 6, 0.78);
+  border-radius: 40px;
+}
+.checklist .list {
+  text-align: left;
+  color: black;
+  position: relative;
+  top: 37px;
+  margin-left: 40px;
+  height: 405px;
+  overflow-y: auto;
+}
+.checklist .list .title {
+  line-height: 40px;
+  margin-top: 30px;
+  font-weight: 700;
+  font-size: 17px;
+}
+.checklist .list .item {
+  margin-top: 23px;
+  height: 34px;
+  width: 257px;
+  position: relative;
+}
+.checklist .list .item .name {
+  position: absolute;
+  top: 0px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.checklist .list .item .detail {
+  position: absolute;
+  top: 20px;
+  font-weight: 400;
+  font-size: 10px;
+}
+.checklist .list .item .howmuch {
+  position: absolute;
+  left: 224px;
+  top: 16px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.checklist .checkout {
+  width: 85px;
+  height: 43px;
+  font-size: 17px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+  text-align: center;
+  line-height: 43px;
+  position: absolute;
+  top: 473px;
+  left: 30px;
+}
+.checklist .total {
+  font-size: 17px;
+  text-align: right;
+  line-height: 22px;
+  font-weight: 600;
+  color: black;
+  position: absolute;
+  top: 472px;
+  left: 247px;
+}
+.checklist .total .money {
+  font-size: 15px;
+}
+
+#pay {
+  position: fixed;
+  top: 214px;
+  margin: 0 auto;
+  left: 22px;
+  width: 331px;
+  height: 240px;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(19, 0, 6, 0.78);
+  border-radius: 40px;
+}
+#pay .modal {
+  margin: auto;
+}
+#pay .modal .bycredit img {
+  width: 84px;
+  height: 82px;
+  position: absolute;
+  top: 62px;
+  left: 52px;
+}
+#pay .modal .byphone img {
+  width: 67px;
+  height: 105px;
+  position: absolute;
+  top: 39px;
+  left: 205px;
+}
+#pay .modal .cancel-border {
+  text-align: center;
+  line-height: 43px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 285px;
+  height: 43px;
+  position: absolute;
+  color: white;
+  top: 173px;
+  left: 22px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+#pay .modal .cancel {
+  z-index: 7;
+  position: absolute;
+  text-align: center;
+  line-height: 43px;
+  font-size: 14px;
+  font-weight: 400;
+  top: 173px;
+  left: 22px;
+  color: black;
+  padding: 0.5px;
+  width: 282px;
+  height: 40px;
+  border-radius: 21.5px;
+  background: white;
+}
+
+.is-blurred {
+  filter: blur(10px);
+}

@@ -1,0 +1,40 @@
+#people #many, #people #one {
+  font-weight: 700;
+  width: 331px;
+  height: 116px;
+  position: absolute;
+  text-align: right;
+  left: 22px;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+}
+#people #many p, #people #one p {
+  font-size: 17px;
+  line-height: 116px;
+  left: 255px;
+  position: absolute;
+}
+
+#people #one {
+  top: 200px;
+}
+#people #one img {
+  width: 60px;
+  top: 30px;
+  left: 38px;
+  position: absolute;
+  z-index: 2;
+}
+#people #many {
+  top: 346px;
+}
+#people #many img {
+  width: 80px;
+  top: 20px;
+  left: 26px;
+  position: absolute;
+  z-index: 2;
+}
+
+/*# sourceMappingURL=style.css.map */

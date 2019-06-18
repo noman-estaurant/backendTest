@@ -1,0 +1,159 @@
+.main_body {
+  padding-top: 100px;
+  background:rgb(255,123,159);
+}
+.nav{
+  width: 100%;
+  height: 64px;
+}
+#map{
+  width: 330.4px;
+  height: 35px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.index{
+  height:556px;
+  width: 100%;
+}
+.info{
+  background: rgb(255, 255, 255);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.namecard{
+  height:116px;
+  width: 331px;
+  margin-left: 22px;
+  margin-right: 22px;
+  margin-bottom: 25px;
+  border-radius: 40px;
+  background: rgb(255, 255, 255);
+  box-shadow:0px 5px 20px 0px rgba(19, 0, 6, 0.78);
+}
+.clip_map{
+  height: 35px;
+  width:330.4px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+.storedata{
+  width: 234px;
+  height: 36px;
+  margin-top: 11px;
+  margin-left: 25px;
+}
+.Store{
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.41px;
+  font-family:'Noto Sans CJK TC';
+  color:rgb(74,74,74);
+}
+.adress{
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: -0.41px;
+  font-family:'Noto Sans CJK TC';
+  color:rgb(74,74,74);
+}
+.nc{
+  position: absolute;
+  width: 325px;
+  height: 25px;
+  margin-left: 25px;
+}
+.waitTime{
+  width: max-content;
+  margin-top: 0px;
+  color:rgb(76, 217, 100);
+  font-size: 14px;
+  letter-spacing: -0.34px;
+  border-color: rgb(253, 251, 251);
+  font-family: 'Noto Sans CJK TC';
+}
+.fork{
+  width: 63px;
+  position: relative;
+  left:290px;
+  top:-57.5px;
+}
+.distance{
+  width: max-content;
+  position: relative;
+  left:245px;
+  bottom: 33px;
+  font-size: 14px;
+  letter-spacing: -0.41px;
+  color:rgb(74, 74, 74);
+}
+.foo{
+  width: 100%;
+  height: 47px;
+}
+#direction{
+  display: none;
+  height: 603px;
+  width: 374.1px;
+  z-index: 1;
+}
+.dir_card{
+  display: none;
+  position: fixed;
+  width: 337px;
+  height: 150.3px;
+  border-radius: 40px;
+  background: rgb(255,255,255);
+  box-shadow: 0px 3px 10px 0 rgba(158,77,100,0.5);
+  margin-left: 18.1px;
+  bottom: 0;
+  margin-bottom: 18.7px;
+  z-index: 10;
+}
+.dir_info{
+  width:93px;
+  height: 58px;
+  margin-top: 21px;
+  margin-left: 25px;
+}
+.dir_info .name{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.dir_info .name p{
+  font-family:'Noto Sans CJK TC';
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 17px;
+  letter-spacing: -0.41px;
+}
+.dir_info .dir_dis{
+  margin-left: 161px;
+}
+.dir_info .other{
+  font-family:'Noto Sans CJK TC';
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: -0.41px;
+}
+.dir_waitTime{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 25px;
+  margin-top:21px;
+  width: 150px;
+  height: 32px;
+  z-index: 2;
+}
+.dir_waitTime p{
+  font-family: 'Noto Sans CJK TC';
+  color:rgb(76, 217, 100);
+  letter-spacing: -0.34px;
+}
+.pngfork{
+  position: relative;
+  bottom: 40px;
+  left: 287px;
+}

@@ -1,0 +1,19 @@
+const config = {
+  'mysql': {
+    'database': '',
+    'host': '',
+    'password': '',
+    'user': ''
+  },
+  'googleMapKey': '',
+  'clientId': '',
+  'secret': '',
+  "ssl":{
+    "ca": '',
+    "cert": '',
+    "key": ''
+  },
+  "root": ''
+}
+
+module.exports = config
