@@ -68,7 +68,7 @@ class ShoppingCart extends Component {
                           <p class='checkbox__text'>不要酸黃瓜</p>
                         </div>
                       </div>
-                      <p class='meal__price'>$80</p>
+                      <p class='meal__price'>{`$ ${element.money}`}</p>
                     </div>
                   )
                 })

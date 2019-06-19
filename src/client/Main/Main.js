@@ -108,7 +108,6 @@ class Main extends Component {
             {...props}
             handleBack={() => window.location.href = `#/main/order/${this.state.store}`}
             showOrder={this.showOrder}
-            sum={this.state.main.length + this.state.side.length + this.state.drink.length}
             />}
           />
           <Route path='/main/pay' component={Pay} />

@@ -1,5 +1,4 @@
 .checklist {
-  margin: 0 auto;
   margin-top: 85px;
   width: 331px;
   height: 553px;
@@ -61,6 +60,9 @@
   position: absolute;
   top: 473px;
   left: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  justify-content: center;
 }
 .checklist .total {
   font-size: 17px;
@@ -122,18 +124,19 @@
 #pay .modal .cancel {
   z-index: 7;
   position: absolute;
-  text-align: center;
-  line-height: 43px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: bold;
   top: 173px;
   left: 22px;
   color: black;
-  padding: 0.5px;
+  justify-content: center;
+  align-items: center;
   width: 282px;
   height: 40px;
   border-radius: 21.5px;
   background: white;
+  border: solid 1px rgb(255,143,94);
+  display: flex;
 }
 
 .is-blurred {
