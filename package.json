@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "watch": "webpack --mode production --watch --config ./webpack.config.babel.js",
     "server": "node src/server/index.js",
-    "copy": " cp -r ./public/src ./dist",
+    "copy": "mkdir ./dist && cp -r ./public/src ./dist/src",
     "dev": "concurrently \"npm run server\" \"npm run watch\"",
     "pro": "concurrently \"npm start\" \"npm run watch\""
   },
