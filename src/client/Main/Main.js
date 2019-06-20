@@ -4,6 +4,10 @@ import Home from './Home/Home'
 import Tabbar from './Common/Tabbar'
 import Order from './Order/Order'
 import Menu from './Order/Menu/Menu'
+import GroupMenu from './Order/Menu/GroupMenu'
+import Group from './Order/Group/Group'
+import Host from './Order/Group/Host/Host'
+import Follow from './Order/Group/Follow/Follow'
 import Navigationbar from './Common/Navigationbar'
 import ShoppingCart from './ShoppingCart/ShoppingCart'
 import Pay from './Pay/Pay'
@@ -69,21 +73,25 @@ class Main extends Component {
 
   componentWillMount() {
 		//const isLogin = localStorage.getItem('token')
-		//if (!isLogin) window.location.href = '#/'
+    //if (!isLogin) window.location.href = '#/'
   }
 
   render() {
     return (
       <HashRouter>
         <div>
-          <Route exact path='/main' render={props => <Home {...props} handleStore={this.handleStore} />}/>
+          <Route exact path='/main' render={
+            props => 
+              <Home {...props} 
+              handleStore={this.handleStore}
+             />}/>
           <Route exact path='/main/order/:id' render={
             props =>
               <Order
                 {...props}
                 handleBack={() => window.location.href = '#/main'}
               />} />
-          <Route path='/main/order/:id/one' render={
+          <Route exact path='/main/order/:id/one' render={
             props =>
               <Menu
                 {...props}
@@ -94,6 +102,38 @@ class Main extends Component {
               />
             }
           />
+          <Route exact path='/main/order/:id/groupmenu' render={
+            props =>
+              <GroupMenu
+                {...props}
+                handleMain={this.handleMain}
+                handleSide={this.handleSide}
+                handleDrink={this.handleDrink}
+                sum={this.state.main.length + this.state.side.length + this.state.drink.length}
+              />
+            }
+          />
+          <Route exact path='/main/order/:id/many' render={
+            props =>
+              <Group
+                {...props}
+              />
+            }
+          />
+          <Route exact path='/main/order/:id/many/host' render={
+            props =>
+              <Host
+                {...props}
+              />
+            }
+          />
+          <Route exact path='/main/order/:id/many/follow' render={
+            props =>
+              <Follow
+                {...props}
+              />
+            }
+          /> 
           <Route path='/main/shoppingcart' render={props =>
           <ShoppingCart
             {...props}

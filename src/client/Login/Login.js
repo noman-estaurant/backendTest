@@ -52,7 +52,7 @@ class Login extends Component {
 					}
 				},
 				{
-					scope: 'public_profile,email,user_birthday',
+					scope: 'public_profile,email',
 					return_scopes: true
 				}
 			)
