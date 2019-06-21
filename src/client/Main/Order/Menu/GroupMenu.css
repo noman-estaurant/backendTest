@@ -1,0 +1,48 @@
+#big-menu #drinks, #big-menu #side-meal, #big-menu #main-meal {
+  font-weight: 700;
+  width: 331px;
+  height: 116px;
+  position: absolute;
+  text-align: right;
+  left: 22px;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+}
+#big-menu #drinks p, #big-menu #side-meal p, #big-menu #main-meal p {
+  font-size: 17px;
+  top: 46px;
+  left: 255px;
+  position: absolute;
+}
+
+#big-menu #main-meal {
+  top: 89px;
+}
+#big-menu #main-meal img {
+  width: 74px;
+  top: 25px;
+  left: 38px;
+  position: absolute;
+  z-index: 2;
+}
+#big-menu #side-meal {
+  top: 230px;
+}
+#big-menu #side-meal img {
+  width: 59px;
+  top: 18px;
+  left: 43px;
+  position: absolute;
+  z-index: 2;
+}
+#big-menu #drinks {
+  top: 371px;
+}
+#big-menu #drinks img {
+  width: 51px;
+  top: 16px;
+  left: 48px;
+  position: absolute;
+  z-index: 2;
+}

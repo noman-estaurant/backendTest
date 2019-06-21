@@ -1,0 +1,58 @@
+
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0;
+}
+
+input.input {
+  font-size: 44px;
+  position: relative;
+  height: 43px;
+  width: 215px;
+  display: block;
+  margin: auto;
+  top: 240px;
+  background: transparent;
+  border: none;
+  letter-spacing: 10.5px;
+}
+
+.input {
+  position: relative;
+  height: 3px;
+  top: 240px;
+  width: 210px;
+  display: block;
+  margin: auto;
+}
+.input > .input__line {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #ff78ab 50%, transparent 50%);
+  background-size: 35px 100%;
+}
+
+.button {
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  line-height: 43px;
+  position: relative;
+  height: 43px;
+  width: 285px;
+  margin: auto;
+  top: 416px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+
+/*# sourceMappingURL=style.css.map */

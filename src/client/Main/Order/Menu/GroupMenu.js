@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import MainMeal from './MainMeal/MainMeal'
 import Tabbar from '../../Common/Tabbar'
 import Navigationbar from '../../Common/Navigationbar'
-import './Menu.css'
+import './GroupMenu.css'
 
-class Menu extends Component {
+class GroupMenu extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       page: 0,
-      header: '點餐',
+      header: '揪團點餐',
       handleBack: () => {
         const id = window.location.hash.split('/')[3]
         window.location.href = `#/main/order/${id}`
@@ -79,4 +79,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu
+export default GroupMenu
