@@ -120,7 +120,8 @@
 
 .cartPage .cartPage__notempty .notempty__meal .meal__detail .detail__checkbox {
   display: flex;
-  margin-top: 7px;
+  margin-top: 2px;
+  margin-bottom: 4px;
 }
 
 .cartPage .cartPage__notempty .notempty__meal .meal__detail .detail__checkbox .checkbox__text {
@@ -168,9 +169,11 @@
   box-shadow: 0px 2px 5px rgb(158,77,100,0.5);
 }
 
-.checkout .checkout__info {
+.checkout__info {
   margin-left: 142px;
   align-self: center;
+  position: absolute;
+  left: 130px;
 }
 
 .checkout .checkout__info .info__money {

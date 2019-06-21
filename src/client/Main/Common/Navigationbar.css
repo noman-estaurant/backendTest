@@ -23,6 +23,7 @@
   left: 25px;
   stroke: black;
   stroke-width: 3px;
+  z-index: 100;
 }
 .navigationbar img.cart {
   position: absolute;

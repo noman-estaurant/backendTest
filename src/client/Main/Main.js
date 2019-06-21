@@ -12,6 +12,7 @@ import Navigationbar from './Common/Navigationbar'
 import ShoppingCart from './ShoppingCart/ShoppingCart'
 import Pay from './Pay/Pay'
 import Checkout from './Checkout/Checkout'
+import Profile from './Profile/Profile'
 
 class Main extends Component {
   constructor(props) {
@@ -117,6 +118,8 @@ class Main extends Component {
             props =>
               <Group
                 {...props}
+                handleBack={() => {window.location.href = '#/main/order/:id/'}}
+
               />
             }
           />
@@ -124,6 +127,7 @@ class Main extends Component {
             props =>
               <Host
                 {...props}
+                handleBack={() => {window.location.href = '#/main/order/:id/many'}}
               />
             }
           />
@@ -131,6 +135,7 @@ class Main extends Component {
             props =>
               <Follow
                 {...props}
+                handleBack={() => {window.location.href = '#/main/order/:id/many'}}
               />
             }
           /> 
@@ -141,6 +146,11 @@ class Main extends Component {
             showOrder={this.showOrder}
             deleteOrder={this.deleteOrder}
             sum={this.state.main.length + this.state.side.length + this.state.drink.length}
+            />}
+          />
+          <Route exact path='/main/profile' render={props =>
+          <Profile
+            {...props}
             />}
           />
           <Route path='/main/checkout' render={props =>

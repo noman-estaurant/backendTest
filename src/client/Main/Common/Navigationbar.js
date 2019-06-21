@@ -19,7 +19,8 @@ class Navigationbar extends Component {
     return (
       <div class="navigationbar" style={style()}>
         {
-          handleBack !== null ? <img class="back" src="src/left-arrow-chevron.svg" onClick={handleBack}/>
+          handleBack !== null ? <img class="back" src="src/left-arrow-chevron.svg" onClick={
+            () => {this.props.handleBack()}}/>
           : null
         }
         <p class="title">{header}</p>

@@ -43,7 +43,7 @@ class ShoppingCart extends Component {
             <div class='cartPage__notempty notempty'>
               <div class='notempty__meal meal' style={{marginTop: '83px'}} onClick={this.handleMain} >
                 <img class='meal__img' src='src/unmannedRestaurant07@2x.png' />
-                <div class='meal__info info'>
+                <div class='meal__info'>
                   <p class='info__type'>我的主餐</p>
                   <div class='info__money'>
                     <p>{`X ${showOrder().main.length}`}</p>
@@ -107,7 +107,7 @@ class ShoppingCart extends Component {
           (
             <div class='checkout'>
               <Link class='checkout__button' to='/main/checkout'>結帳</Link>
-              <div class='checkout__info info'>
+              <div class='checkout__info'>
                 <p class='info__money'>總金額</p>
                 <p class='info__number'>{`$ ${mainMoney + sideMoney + drinkMoney}`}</p>
               </div>

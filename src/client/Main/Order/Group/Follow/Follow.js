@@ -10,7 +10,7 @@ class Follow extends Component {
     const { handleBack } = this.props
     return (
       <div>
-        <Navigationbar handleBack={handleBack} header={'跟團'} cart={0} template={1}/>
+        <Navigationbar handleBack={this.props.handleBack} header={'跟團'} cart={0} template={1}/>
         <input class="input" type="text" maxlength="6" />
           <div class="input">
             <div class="input__line"></div>

@@ -1,16 +1,17 @@
-#main-dish .menu .button {
+#main-dish .menu .card {
   font-weight: 700;
   width: 315px;
   height: 116px;
   text-align: right;
   margin: auto;
   margin-top: 25px;
-  background-color: white;
+  color:black;
+  background: white;
   border-radius: 40px;
   box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
   overflow: hidden;
 }
-#main-dish .menu .button .content {
+#main-dish .menu .card .content {
   width: 117px;
   height: 45px;
   left: 150px;
@@ -18,13 +19,13 @@
   position: absolute;
   line-height: 23px;
 }
-#main-dish .menu .button .content .titile {
+#main-dish .menu .card .content .titile {
   font-size: 17px;
 }
-#main-dish .menu .button .content .howmuch {
+#main-dish .menu .card .content .howmuch {
   font-size: 15px;
 }
-#main-dish .menu .button img {
+#main-dish .menu .card img {
   height: 80px;
   top: 25px;
   left: 0px;
@@ -32,7 +33,7 @@
   z-index: 2;
 }
 
-.button,
+.card,
 .container {
   position: relative;
 }

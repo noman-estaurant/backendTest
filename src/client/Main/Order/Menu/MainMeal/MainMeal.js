@@ -20,7 +20,7 @@ class MainMeal extends Component {
     const getMenu = (id, img, name, money) => {
       return (
         <div class="menu">
-          <div class="button">
+          <div class="card">
             <img src={img} />
             <div class="content">
               <p class="title">{name}</p>

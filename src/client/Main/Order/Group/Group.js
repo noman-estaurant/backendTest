@@ -10,7 +10,7 @@ class Group extends Component {
     const { handleBack } = this.props
     return (
       <div>
-        <Navigationbar handleBack={handleBack} header={'揪團點餐'} cart={0} template={1}/>
+        <Navigationbar handleBack={this.props.handleBack} header={'揪團點餐'} cart={0} template={1}/>
         <div id="group">
           <div id="host" onClick={() => {
             window.location.href = `#/main/order/${id}/many/host`

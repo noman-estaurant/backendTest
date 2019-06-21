@@ -15,7 +15,7 @@ class Host extends Component {
   clock = () => {
     this.setState({seconds: this.state.seconds-1});
     if(this.state.seconds==0)
-        console.log("times up");
+      window.location.href = '#/main/order/:id/'
   }
   componentDidMount () {
     this.timer = setInterval(this.clock, 1000);
@@ -28,7 +28,7 @@ class Host extends Component {
     const { handleBack } = this.props
     return (
       <div>
-        <Navigationbar handleBack={handleBack} header={'開團'} cart={0} template={1}/>
+        <Navigationbar handleBack={this.props.handleBack} header={'開團'} cart={0} template={1}/>
         <div class="num">{this.state.groupid }</div>
         <div class="info">請在60秒內<br />輸入有效金鑰進行揪團配對</div>
         <div class="time" data-seconds="60">
@@ -37,7 +37,6 @@ class Host extends Component {
         <div class="finish"onClick={() => {
               window.location.href = `#/main/order/${id}/groupmenu`
             }}>完成</div>
-
       </div>
     )
   }
