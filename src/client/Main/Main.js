@@ -68,8 +68,20 @@ class Main extends Component {
   }
 
   componentWillMount() {
-		//const isLogin = localStorage.getItem('token')
-		//if (!isLogin) window.location.href = '#/'
+    if (window.location.href.indexOf('?') !== -1) {
+      const id = window.location.href.split('=')[2]
+      const orderId = window.location.href.split('=')[1].split('&')[0]
+      fetch('https://luffy.ee.ncku.edu.tw:17785/api/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id,
+          orderId
+        })
+      })
+    }
   }
 
   render() {

@@ -25,13 +25,15 @@
     "google-auth-library": "^3.1.2",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.17.1",
+    "node-fetch": "^2.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-google-login": "^5.0.4",
     "react-google-maps": "^9.4.5",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

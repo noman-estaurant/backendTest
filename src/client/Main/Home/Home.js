@@ -24,7 +24,7 @@ class Home extends Component {
         lng: userPosition_lng
       })
       $.ajax({
-        url:"https://luffy.ee.ncku.edu.tw:17787/api/restaurant",
+        url:"https://luffy.ee.ncku.edu.tw:17785/api/restaurant",
         method:"POST",
         data:{"userPosition_lat":position.coords.latitude,"userPosition_lng":position.coords.longitude},
         dataType:"json",
