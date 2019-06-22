@@ -43,7 +43,8 @@ class Login extends Component {
 										ID: response.id
 									},
 									result => {
-        						localStorage.setItem('token', result.token)
+										localStorage.setItem('token', result.token)
+										console.log(localStorage.getItem('token'))
 										window.location.href = '#/main'
 									}
 								)

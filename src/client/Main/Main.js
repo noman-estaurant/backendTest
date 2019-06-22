@@ -73,8 +73,25 @@ class Main extends Component {
   }
 
   componentWillMount() {
+<<<<<<< HEAD
+    if (window.location.href.indexOf('?') !== -1) {
+      const id = window.location.href.split('=')[2]
+      const orderId = window.location.href.split('=')[1].split('&')[0]
+      fetch('https://luffy.ee.ncku.edu.tw:17785/api/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id,
+          orderId
+        })
+      })
+    }
+=======
 		//const isLogin = localStorage.getItem('token')
     //if (!isLogin) window.location.href = '#/'
+>>>>>>> 99423cb4ba16e1b325c1d8433191645722a9207a
   }
 
   render() {

@@ -4,6 +4,8 @@ const router = express.Router()
 const restaurant = require('./restaurant')
 const login = require('./login')
 const menu = require('./menu')
+const pay = require('./pay')
+const order = require('./order')
 
 // CORS setting
 router.all('*', (req, res, next) => {
@@ -20,5 +22,9 @@ router.use('/restaurant', restaurant)
 router.use('/login', login)
 
 router.use('/menu', menu)
+
+router.use('/pay', pay)
+
+router.use('/order', order)
 
 module.exports = router
