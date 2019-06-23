@@ -13,7 +13,7 @@ class Final extends Component {
     const { showOrder } = this.props
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     return (
-      <div style={{display: 'flex', justifyContent: 'center', background: 'rgb(255, 123, 159)', height: '100vh'}}>
+      <div style={{display: 'flex', justifyContent: 'center', background: 'rgb(255, 123, 159)', height: '100vh',overflowY:'hidden'}}>
         <Navigationbar handleBack={null} header={' 黑膠漢堡 '} cart={0} template={0}/>
         <div class="checklist">
             <div class="fcontainer">

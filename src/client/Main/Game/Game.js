@@ -3,22 +3,26 @@ import './Game.css'
 import Navigationbar from '../Common/Navigationbar'
 import Tabbar from '../Common/Tabbar'
 
+var temperate_selection
+
 class Game extends Component {
 
     constructor(props) {
         super(props)
+        this.state = {
+            row_number: 0,
+            column_number: 0
+        }
     }
 
+    
+
     componentDidMount () {
-        var condition_number=0;
-        var selected_number;
         var selected_box_row=['cabinet_box_row1','cabinet_box_row2','cabinet_box_row3','cabinet_box_row4']
         var selected_box_column=['cabinet_box_column1','cabinet_box_column2','cabinet_box_column3','cabinet_box_column4']
-        var row_number=0;
-        var column_number=0;
-        var final_number=0;
-        $('body').on('click', function () {
-            $('.first_welcome').fadeOut(1000); 
+        var condition_number=0
+        $('.game_body').on('click', function () {
+            $('.first_welcome').fadeOut(500); 
       
             $('.cabinet_numbers').on('click', function() {
               if (condition_number==0){
@@ -28,7 +32,6 @@ class Game extends Component {
                   temperate_selection=this;
                           $('#cabinet_ok').fadeTo("100",1);
               }
-      
               if (condition_number==1){
                   $(temperate_selection).removeClass('selected');
                   $(temperate_selection).addClass('cabinet_numbers');
@@ -36,7 +39,6 @@ class Game extends Component {
                   $(this).removeClass('cabinet_numbers');
                   temperate_selection=this;
             }
-        
             });
       
             $('#cabinet_ok').on('click', function() {
@@ -46,21 +48,29 @@ class Game extends Component {
                       for(var i = 0, j = selected_box_row.length; i < j; i++) {
                               console.log("hihihi");
                           if($(temperate_selection).hasClass(selected_box_row[i])) {
-                              var row_number=i+1;
+                                this.setState(state => ({ row_number:i+1 }))
                                       break;
                           }
                       }
                       
                       for(var i = selected_box_column.length, j = 0; i > j; i--) {
-                          if($(temperate_selection).hasClass(selected_box_colimn[i])) {
-                              var column_number=i-1;
-                                      break;
+                          if($(temperate_selection).hasClass(selected_box_column[i])) {
+                            this.setState(state => ({ column_number:i-1 }))
+                            break;
                           }
                       }
-                      
-                      final_number=(row_number)*(selected_box_column.length)-column_number;
-                      console.log(final_number);
-              }
+
+           
+                      console.log(temperate_selection);
+                      var str = temperate_selection;
+                      var res = str.split("cabinet_number");
+                      var str = res.join("");
+                      console.log(str);
+                      $("#game_finish2").html("您的取餐格是"+str+"號！")
+                      $('#game_finish_back, .game_finish').show(1); 
+                      $('#game_finish1, #game_finish2').delay(1500).fadeOut(800);
+                      $('#game_finish_coupon, #game_finish_coupon_get').delay(3000).show(800);              
+                    }
             })
           })
     }
@@ -109,16 +119,16 @@ class Game extends Component {
 		
             <p class="cabinet_top_rectangle_background" id="cabinet_top_rectangle_background1"></p>
             <p class="cabinet_top_rectangle_background" id="cabinet_top_rectangle_background2"></p>
-            <div><img src="https://i.imgur.com/UkpZJmL.png" class="cabinet_top_circle" width="52px" id="cabinet_top_circle1"/></div>
-            <div><img src="https://i.imgur.com/UkpZJmL.png" class="cabinet_top_circle" width="52px" id="cabinet_top_circle2"/></div>
-            <div><img src="https://i.imgur.com/UkpZJmL.png" class="cabinet_top_circle" width="52px" id="cabinet_top_circle3"/></div>
+            <div><img src="https://i.imgur.com/UkpZJmL.png" class="cabinet_top_circle" width="19px" id="cabinet_top_circle1"/></div>
+            <div><img src="https://i.imgur.com/UkpZJmL.png" class="cabinet_top_circle" width="19px" id="cabinet_top_circle2"/></div>
+            <div><img src="https://i.imgur.com/UkpZJmL.png" class="cabinet_top_circle" width="19px" id="cabinet_top_circle3"/></div>
             <p class="cabinet_top_rectangle" id="cabinet_top_rectangle1"></p>
             <p class="cabinet_top_rectangle" id="cabinet_top_rectangle2"></p>
 
             <p id="all_cabinet"></p>
     
-		    <div><img src="https://i.imgur.com/6KO0Uoa.png" alt="all_shed" width="975px" id="all_shed"/></div>
-            <div><img src="https://i.imgur.com/RgjQzqz.png" alt="all_backgrpund" id="all_background" width="975px"/></div>
+		    <div><img src="https://i.imgur.com/6KO0Uoa.png" alt="all_shed" width="100%" id="all_shed"/></div>
+            <div><img src="https://i.imgur.com/RgjQzqz.png" alt="all_backgrpund" id="all_background" width="100%"/></div>
 		    <div><img src="https://i.imgur.com/UphdGf1.png" alt="cabinet_ok" id="cabinet_ok"/></div>
 
             <div class="cabinet_numbers cabinet_box_row1 cabinet_box_column1" id="cabinet_number1">01</div>
@@ -137,6 +147,17 @@ class Game extends Component {
             <div class="cabinet_numbers cabinet_box_row4 cabinet_box_column2" id="cabinet_number14">14</div>
             <div class="cabinet_numbers cabinet_box_row4 cabinet_box_column3" id="cabinet_number15">15</div>
             <div class="cabinet_numbers cabinet_box_row4 cabinet_box_column4" id="cabinet_number16">16</div>
+
+            <div id="game_finish_back"></div>
+            <div class="game_finish"> 
+                <div id="game_finish1"><b>答對了</b></div>
+                <div id="game_finish2"></div>
+            </div>
+            <img src="https://i.imgur.com/S6CWG3l.png" alt="game_finish_coupon" id="game_finish_coupon"></img>
+            <div id="game_finish_coupon_get" onClick={() => {
+                window.location.href = '#/main/coupon'
+             }} >領取</div>
+
         </div>
     )
   }

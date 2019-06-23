@@ -1,269 +1,335 @@
-.game_body{
-    height:100vh;
-    width: 100vw;
+body{
+  font-family:PingFangTC-Semibold, sans-serif;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
 }
 
 #first_welcome_back {
-    position:absolute; 
-    top:0; 
-    left:0; 
-    width:100%; 
-    height:100%; 
-    background:#000; 
-    opacity:0.6; 
-    z-index:10;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw; 
+  height:100vh; 
+  background:#000; 
+  opacity:0.6; 
+  z-index:10;
+}
+
+#first_welcome_first {
+	position:absolute;
+	top:42.73vh;
+	left:23.06667vw;
+	width:53.8666667vw;
+	height:9.596vh;
+	font-size:6.05128vw;
+	text-align: center;
+	color:white;
+  line-height:4.0369vh;
+	z-index:10;
+}
+
+#first_welcome_second1 {
+	position:absolute;
+	top:42.73vh;
+	left:23.06667vw;
+	width:53.8666667vw;
+	height:9.596vh;
+	font-size:3.0769vw;
+	text-align: center;
+	color:white;
+  line-height:14.0751vh;
+	z-index:10;
+}
+
+#first_welcome_second2 {
+	position:absolute;
+	top:42.73vh;
+	left:23.06667vw;
+	width:53.8666667vw;
+	height:9.596vh;
+	font-size:3.0769vw;
+	text-align: center;
+	color:white;
+  line-height:18.8vh;
+	z-index:10;
+}
+
+.choose_box {
+	background:rgb(247,208,220);
+	position:absolute;
+	width:16vw;
+	height:8.7716vh;
+  border-radius:4.41026vw;
+  z-index:3;
+}
+.box_row1 {
+	top:32.61246vh;
+}
+.box_row2 {
+	top:43.63322vh;
+}
+.box_row3 {
+	top:54.65398vh;
+}
+.box_row4 {
+	top:65.68973vh;
+}
+.box_column1 {
+	left:11.81333vw;
+}
+.box_column2 {
+	left:31.73333vw;
+}
+.box_column3 {
+	left:51.54667vw;
+}
+.box_column4 {
+	left:71.41333vw;
+}
+
+.choose_topbox {
+	background:rgb(255,245,248);
+	position:absolute;
+	width:16vw;
+	height:8.765859vh;
+  border-radius:4.410256vw;
+  z-index:4;
+}
+.topbox_row1 {
+	top:32.89696vh;
+}
+.topbox_row2 {
+	top:43.91772vh;
+}
+.topbox_row3 {
+	top:54.93849vh;
+}
+.topbox_row4 {
+	top:65.97424vh;
+}
+.topbox_column1 {
+	left:12.31932vw;
+}
+.topbox_column2 {
+	left:32.23932vw;
+}
+.topbox_column3 {
+	left:52.05265vw;
+}
+.topbox_column4 {
+	left:71.91932vw;
+}
+
+#all_cabinet {
+  background:rgb(58,56,181);
+  position:absolute;
+	width:92.1866667vw;
+	height:57.81776vh;
+  top:24.1857vh;
+  left:3.786667vw;
+  border-radius:5.12821vw;
+	opacity:0.8;
+  z-index:2;
+}
+
+
+#all_shed {
+  position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+}
+
+.cabinet_top_rectangle_background {
+  position:absolute;
+	background:rgb(27,13,98);
+	top:27.31949vh;
+	height:2.4vw;
+	border-radius:2.05128vw;
+	z-index:3;
+}
+
+.cabinet_top_circle {
+  position:absolute;
+	top:27.39331vh;
+	z-index:3;
+}
+
+#cabinet_top_rectangle_background1 {
+  position:absolute;
+	width:7.2vw;
+	left:15.53057vh;
+}
+
+#cabinet_top_rectangle_background2 {
+  position:absolute;
+	width:33.26vw;
+	left:22.72434vh;
+}
+
+#cabinet_top_circle1{
+  left:8.986667vw;
+}
+#cabinet_top_circle2{
+  left:14.64vw;
+}
+#cabinet_top_circle3{
+  left:20.26667vw;
+}
+.cabinet_top_rectangle{
+  position:absolute;
+	background:rgb(58,56,181);
+	top:27.48443vh;
+	height:2.4vw;
+	border-radius:2.051282vw;
+	z-index:3;
+}
+#cabinet_top_rectangle1 {
+  position:absolute;
+	width:7.2vw;
+	left:27.92vw;
+}
+
+#cabinet_top_rectangle2 {
+  position:absolute;
+	width:33.26vw;
+	left:40.7077vw;
+}
+
+
+
+#all_background{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100vw;
+  height:100vh;
+  z-index:1;
+}
+
+
+.cabinet_numbers{
+  position:absolute;
+	background-image:url("https://i.imgur.com/i8Yvb94.png");
+	background-size:16.71795vw;
+	width: 16.71795vw;
+  	height: 9.400231vh;
+  	font-size: 6.461538vw;
+  	text-align: center;
+  	color:white;
+  	line-height: 9.16955vh;
+  	z-index:6;
+  	opacity:0;
   }
-  
-  #first_welcome_first {
-      position:absolute;
-      top:741px;
-      left:224.9px;
-      width:525.2px;
-      height:166.4px;
-      font-size:59px;
-      text-align: center;
-      color:white;
-    line-height:70px;
-      z-index:10;
+
+.selected{
+  	position:absolute;
+  	background-image:url("https://i.imgur.com/i8Yvb94.png");
+  	background-size:100% 100%;
+  	width: 16.71795vw;
+  	height: 9.400231vh;
+ 	 font-size: 6.461538vw;
+ 	 text-align: center;
+ 	 color:white;
+ 	 line-height: 9.16955vh;
+ 	 z-index:6;
+ 	 opacity:1;
+}
+
+#cabinet_ok {
+	position:absolute;
+	width:34.66667vw;
+	height:8.096886vh;
+	left:32.8vw;
+	top:77.82007vh;
+	z-index:3;
+	opacity:0.3;
+}
+
+.cabinet_box_row1 {
+	top:32.6vh;
+}
+.cabinet_box_row2 {
+	top:43.6vh;
+}
+.cabinet_box_row3 {
+	top:54.6vh;
+}
+.cabinet_box_row4 {
+	top:65.6vh;
+}
+.cabinet_box_column1 {
+	left:11.81333vw;
+}
+.cabinet_box_column2 {
+	left:31.7333vw;
+}
+.cabinet_box_column3 {
+	left:51.54667vw;
+}
+.cabinet_box_column4 {
+	left:71.41333vw;
+}
+
+.game_finish {
+  position:absolute;
+  width:88.2666vw;
+  height:35.98616vh;
+  left:5.86666vw;
+  top:32.08766vh;
+  z-index:11;
+  background-color:rgb(255,255,255);
+  border-radius:5.128205vw;
+  display:none;
+  text-align: center;
+  color:black;
   }
-  
-  #first_welcome_second1 {
-      position:absolute;
-      top:741px;
-      left:224.9px;
-      width:525.2px;
-      height:166.4px;
-      font-size:30px;
-      text-align: center;
-      color:white;
-    line-height:244px;
-      z-index:10;
-  }
-  
-  #first_welcome_second2 {
-      position:absolute;
-      top:741px;
-      left:224.9px;
-      width:525.2px;
-      height:166.4px;
-      font-size:30px;
-      text-align: center;
-      color:white;
-    line-height:326px;
-      z-index:10;
-  }
-  
-  .choose_box {
-      background:rgb(247,208,220);
-      position:absolute;
-      width:117pt;
-      height:114pt;
-    border-radius:43px;
-    z-index:3;
-  }
-  .box_row1 {
-      top:424.125pt;
-  }
-  .box_row2 {
-      top:567.45pt;
-  }
-  .box_row3 {
-      top:710.775pt;
-  }
-  .box_row4 {
-      top:854.295pt;
-  }
-  .box_column1 {
-      left:86.385pt;
-  }
-  .box_column2 {
-      left:232.05pt;
-  }
-  .box_column3 {
-      left:376.935pt;
-  }
-  .box_column4 {
-      left:522.21pt;
-  }
-  
-  .choose_topbox {
-      background:rgb(255,245,248);
-      position:absolute;
-      width:117pt;
-      height:114pt;
-    border-radius:43px;
-    z-index:4;
-  }
-  .topbox_row1 {
-      top:427.825pt;
-  }
-  .topbox_row2 {
-      top:571.15pt;
-  }
-  .topbox_row3 {
-      top:714.475pt;
-  }
-  .topbox_row4 {
-      top:857.995pt;
-  }
-  .topbox_column1 {
-      left:90.085pt;
-  }
-  .topbox_column2 {
-      left:235.75pt;
-  }
-  .topbox_column3 {
-      left:380.635pt;
-  }
-  .topbox_column4 {
-      left:525.91pt;
-  }
-  
-  #all_cabinet {
-    background:rgb(58,56,181);
-    position:absolute;
-      width:898.82px;
-      height:1002.56px;
-    top:419.38px;
-    left:36.92px;
-    border-radius:50px;
-      opacity:0.8;
-    z-index:2;
-  }
-  
-  
-  #all_shed {
-    position:absolute;
-      top:0px;
-      left:0px;
-      z-index:2;
-  }
-  
-  .cabinet_top_rectangle_background {
-    position:absolute;
-      background:rgb(27,13,98);
-      top:473.72px;
-      height:23.4px;
-      border-radius:20px;
-      z-index:3;
-  }
-  
-  .cabinet_top_circle {
-    position:absolute;
-      top:475px;
-      z-index:3;
-  }
-  
-  #cabinet_top_rectangle_background1 {
-    position:absolute;
-      width:70.2px;
-      left:269.36px;
-  }
-  
-  #cabinet_top_rectangle_background2 {
-    position:absolute;
-      width:324.285px;
-      left:394.04px;
-  }
-  
-  #cabinet_top_circle1{
-    left:87.62px;
-  }
-  #cabinet_top_circle2{
-    left:142.74px;
-  }
-  #cabinet_top_circle3{
-    left:197.6px;
-  }
-  .cabinet_top_rectangle{
-    position:absolute;
-      background:rgb(58,56,181);
-      top:476.58px;
-      height:23.4px;
-      border-radius:20px;
-      z-index:3;
-  }
-  #cabinet_top_rectangle1 {
-    position:absolute;
-      width:70.2px;
-      left:272.22px;
-  }
-  
-  #cabinet_top_rectangle2 {
-    position:absolute;
-      width:324.285px;
-      left:396.9px;
-  }
-  
-  
-  
-  #all_background{
-    position:absolute;
-    left:0px;
-    top:0px;
-    z-index:1;
-  }
-  
-  
-  .cabinet_numbers{
-    position:absolute;
-      background-image:url("https://i.imgur.com/i8Yvb94.png");
-      background-size:163px;
-    width: 163px;
-    height: 163px;
-    font-size: 63pt;
-    text-align: center;
-      color:white;
-    line-height: 159px;
-      z-index:6;
-      opacity:0;
-    }
-  
-  .selected{
-    position:absolute;
-    background-image:url("https://i.imgur.com/i8Yvb94.png");
-    background-size:163px;
-    width: 163px;
-    height: 163px;
-    font-size: 63pt;
-    text-align: center;
-    color:white;
-    line-height: 159px;
-    z-index:6;
-    opacity:1;
-  }
-  
-  #cabinet_ok {
-      position:absolute;
-      width:338px;
-      height:140.4px;
-      left:319.8px;
-      top:1349.4px;
-      z-index:3;
-      opacity:0.3;
-  }
-  
-  .cabinet_box_row1 {
-      top:436pt;
-  }
-  .cabinet_box_row2 {
-      top:579pt;
-  }
-  .cabinet_box_row3 {
-      top:722.5pt;
-  }
-  .cabinet_box_row4 {
-      top:866pt;
-  }
-  .cabinet_box_column1 {
-      left:86.385pt;
-  }
-  .cabinet_box_column2 {
-      left:232.05pt;
-  }
-  .cabinet_box_column3 {
-      left:376.935pt;
-  }
-  .cabinet_box_column4 {
-      left:522.21pt;
-  }
+
+#game_finish_back {
+  position:absolute; 
+  top:0; 
+  left:0; 
+  width:100vw; 
+  height:100vh; 
+  background:#000; 
+  opacity:0.6; 
+  z-index:10;
+  display:none;
+}
+
+#game_finish1 {
+  margin-top: 14.41753vh;
+  font-size:6.153846vw;
+}
+
+#game_finish2 {
+  margin-top: 2.3068vh;
+  font-size:3.73333vw;
+}
+
+#game_finish_coupon {
+  position:absolute;
+  display:none;
+  width:56vw;
+  height:19.1926vh;
+  top:35.53633vh;
+  left:23.2vw;
+  z-index:15;
+}
+#game_finish_coupon_get {
+  position:absolute;
+  display:none;
+  background-image:url(https://i.imgur.com/Thg8rPP.png);
+  background-size:76vw 6.44752vh;
+  width:76vw;
+  height:6.44752vh;
+  left:12.26667vw;
+  top:58.0278vh;
+  text-align: center;
+  color:white;
+  line-height:5.767013vh;
+  font-size:3.7333vw;
+  z-index:15;
+}
