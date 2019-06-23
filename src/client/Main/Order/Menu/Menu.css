@@ -1,10 +1,10 @@
 #big-menu #drinks, #big-menu #side-meal, #big-menu #main-meal {
   font-weight: 700;
-  width: 331px;
   height: 116px;
   position: absolute;
   text-align: right;
-  left: 22px;
+  left: 10vw;
+  right:10vw;
   background-color: white;
   border-radius: 40px;
   box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
@@ -12,7 +12,7 @@
 #big-menu #drinks p, #big-menu #side-meal p, #big-menu #main-meal p {
   font-size: 17px;
   top: 46px;
-  left: 255px;
+  left: 60vw;
   position: absolute;
 }
 

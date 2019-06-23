@@ -5,6 +5,11 @@ import './Follow.css'
 
 class Follow extends Component {
   
+  constructor(props) {
+    localStorage.setItem('type', 'follow');
+    super(props)
+  }
+  
   render() {
     const { id } = this.props.match.params
     const { handleBack } = this.props
@@ -16,7 +21,7 @@ class Follow extends Component {
             <div class="input__line"></div>
           </div>
         <div class="button"onClick={() => {
-              window.location.href = `#/main/order/${id}/groupmenu`
+              window.location.href = `#/main/order/${id}/menu`
           }}>完成</div>
         
       </div>

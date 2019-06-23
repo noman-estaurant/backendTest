@@ -26,6 +26,7 @@ class Order extends Component {
     }
   }
   toggleCouponImage = () => {
+    window.location.href = '#/main/coupon'
     if(this.state.coupon === false){
       this.setState(state => ({ home: false,coupon: true,profile: false }))
     }

@@ -1,4 +1,7 @@
 
+  .profilebody {
+    background-color:#ffffff;
+  }
   .main_profile {
     background-image: url("../../../../dist/src/profile.png");
     background-size: 100% auto;

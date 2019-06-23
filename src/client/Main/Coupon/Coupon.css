@@ -1,0 +1,25 @@
+
+.couponbody {
+    background:#ff7b9f;
+    height:100vh;
+}
+
+.couponlist{
+    background:#ff7b9f;
+    text-align:center;
+    position: absolute;
+    top:60px;
+    width: 100%;
+    height:85%;
+    overflow: scroll;
+}
+
+.couponlist__item{
+    display:block;
+    margin: 0 auto;
+    width: 287px;
+    height: 175px;
+    margin-top: 20px;
+    margin-bottom: 20px;  
+}
+  

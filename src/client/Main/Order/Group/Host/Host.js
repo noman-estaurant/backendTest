@@ -6,6 +6,7 @@ import './Host.css'
 class Host extends Component {
   
   constructor(props) {
+    localStorage.setItem('type', 'host');
     super(props)
     this.state = {
       seconds: 60,
@@ -35,7 +36,7 @@ class Host extends Component {
             <div class="time-content">{this.state.seconds }</div>
         </div>
         <div class="finish"onClick={() => {
-              window.location.href = `#/main/order/${id}/groupmenu`
+              window.location.href = `#/main/order/${id}/menu`
             }}>完成</div>
       </div>
     )

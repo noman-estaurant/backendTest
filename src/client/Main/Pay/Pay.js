@@ -76,7 +76,9 @@ class Pay extends Component {
 					</div>
         </div>
         <div class="button-border">付款
-					<div class="button">付款</div>
+					<div class="button"onClick={() => {
+							window.location.href = '#/main/final'
+              }}>付款</div>
         </div>
       </div>
     )

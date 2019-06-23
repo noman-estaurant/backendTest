@@ -13,6 +13,9 @@ import ShoppingCart from './ShoppingCart/ShoppingCart'
 import Pay from './Pay/Pay'
 import Checkout from './Checkout/Checkout'
 import Profile from './Profile/Profile'
+import Coupon from './Coupon/Coupon'
+import Final from './Final/Final'
+import Game from './Game/Game'
 
 class Main extends Component {
   constructor(props) {
@@ -73,7 +76,6 @@ class Main extends Component {
   }
 
   componentWillMount() {
-<<<<<<< HEAD
     if (window.location.href.indexOf('?') !== -1) {
       const id = window.location.href.split('=')[2]
       const orderId = window.location.href.split('=')[1].split('&')[0]
@@ -88,10 +90,6 @@ class Main extends Component {
         })
       })
     }
-=======
-		//const isLogin = localStorage.getItem('token')
-    //if (!isLogin) window.location.href = '#/'
->>>>>>> 99423cb4ba16e1b325c1d8433191645722a9207a
   }
 
   render() {
@@ -109,7 +107,7 @@ class Main extends Component {
                 {...props}
                 handleBack={() => window.location.href = '#/main'}
               />} />
-          <Route exact path='/main/order/:id/one' render={
+          <Route exact path='/main/order/:id/menu' render={
             props =>
               <Menu
                 {...props}
@@ -159,7 +157,7 @@ class Main extends Component {
           <Route path='/main/shoppingcart' render={props =>
           <ShoppingCart
             {...props}
-            handleBack={() => window.location.href = `#/main/order/${this.state.store}`}
+            handleBack={() => window.location.href = `#/main/order/${this.state.store}/menu`}
             showOrder={this.showOrder}
             deleteOrder={this.deleteOrder}
             sum={this.state.main.length + this.state.side.length + this.state.drink.length}
@@ -170,6 +168,11 @@ class Main extends Component {
             {...props}
             />}
           />
+           <Route exact path='/main/coupon' render={props =>
+          <Coupon
+            {...props}
+            />}
+          />
           <Route path='/main/checkout' render={props =>
           <Checkout
             {...props}
@@ -177,7 +180,19 @@ class Main extends Component {
             showOrder={this.showOrder}
             />}
           />
+          <Route path='/main/game' render={props =>
+          <Game
+            {...props}
+            
+            />}
+          />
           <Route path='/main/pay' component={Pay} />
+          <Route exact path='/main/final' render={props =>
+          <Final
+            {...props}
+            showOrder={this.showOrder}
+            />}
+          />
         </div>
       </HashRouter>
     )

@@ -18,6 +18,7 @@
   position: absolute;
   top: 10px;
   left: 48px;
+  z-index:3;
 }
 .tabbar .coupon img {
   width: 25px;
@@ -28,9 +29,11 @@
   z-index: 6;
 }
 .tabbar .home {
-  position: absolute;
+  margin: auto;
+    position: relative;
+    width: 50px;
+    text-align: center;
   top: 10px;
-  left: 179px;
 }
 .tabbar .home img {
   width: 20px;
@@ -43,7 +46,7 @@
 .tabbar .profile {
   position: absolute;
   top: 10px;
-  left: 300px;
+  right: 48px;
 }
 .tabbar .profile img {
   width: 16px;

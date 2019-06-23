@@ -8,6 +8,7 @@ class Profile extends Component {
   render() {
     return (
         <div>
+            <div class="profilebody">
             <Navigationbar handleBack={null} header={'我'} cart={0} template={0}/>
             <div class="main_profile">
                 <div class="head">
@@ -36,8 +37,10 @@ class Profile extends Component {
                             <img class="item__svg" src="src/rigth-arrow.svg"></img>
                         </div>
                 </div>
+                </div>
+
         </div>
-        <Tabbar profileImg ={"src/profileclick.png"}/>
+        <Tabbar profileImg ={"profileClick"}/>
     </div>
     )
   }

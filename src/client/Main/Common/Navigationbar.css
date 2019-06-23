@@ -47,3 +47,27 @@
   line-height: 15px;
   text-align: center;
 }
+
+#hint{
+  z-index:1000;
+  top:0px;
+  position: fixed;
+  height:100%;
+  width:100%;
+  background: rgb(19,0,6,0.78);
+  color:white;
+  text-align: center;
+}
+.hint__title{
+  position: relative;
+  top:43vh;
+  font-size: 23px;
+  font-weight: 600;
+}
+.hint__content{
+  position: relative;
+  top:47vh;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 16px;
+}

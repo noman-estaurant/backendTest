@@ -50,7 +50,9 @@ body {
   background-image: linear-gradient(to right, transparent 50%, #fcf3f0 0);
   color: #fcf3f0;
   animation: bg2 60s step-end;
+  -webkit-animation: bg2 60s step-end;
   animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
 .time::before {
   content: "";
@@ -60,8 +62,11 @@ body {
   border-radius: 0 100% 100% 0/50%;
   background-color: inherit;
   transform-origin: left;
+  -webkit-transform-origin: left;
   animation: spin 30s linear 2, bg 60s step-end;
+  -webkit-animation: spin 30s linear 2, bg 60s step-end;
   animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
 .time-content {
   font-weight: 500;
@@ -81,6 +86,8 @@ body {
 @keyframes spin {
   to {
     transform: rotate(0.5turn);
+    -ms-transform: rotate(0.5turn);
+    -webkit-transform:  rotate(0.5turn);
   }
 }
 @keyframes bg {

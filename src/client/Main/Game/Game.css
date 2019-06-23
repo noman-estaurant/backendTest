@@ -1,0 +1,269 @@
+.game_body{
+    height:100vh;
+    width: 100vw;
+}
+
+#first_welcome_back {
+    position:absolute; 
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    background:#000; 
+    opacity:0.6; 
+    z-index:10;
+  }
+  
+  #first_welcome_first {
+      position:absolute;
+      top:741px;
+      left:224.9px;
+      width:525.2px;
+      height:166.4px;
+      font-size:59px;
+      text-align: center;
+      color:white;
+    line-height:70px;
+      z-index:10;
+  }
+  
+  #first_welcome_second1 {
+      position:absolute;
+      top:741px;
+      left:224.9px;
+      width:525.2px;
+      height:166.4px;
+      font-size:30px;
+      text-align: center;
+      color:white;
+    line-height:244px;
+      z-index:10;
+  }
+  
+  #first_welcome_second2 {
+      position:absolute;
+      top:741px;
+      left:224.9px;
+      width:525.2px;
+      height:166.4px;
+      font-size:30px;
+      text-align: center;
+      color:white;
+    line-height:326px;
+      z-index:10;
+  }
+  
+  .choose_box {
+      background:rgb(247,208,220);
+      position:absolute;
+      width:117pt;
+      height:114pt;
+    border-radius:43px;
+    z-index:3;
+  }
+  .box_row1 {
+      top:424.125pt;
+  }
+  .box_row2 {
+      top:567.45pt;
+  }
+  .box_row3 {
+      top:710.775pt;
+  }
+  .box_row4 {
+      top:854.295pt;
+  }
+  .box_column1 {
+      left:86.385pt;
+  }
+  .box_column2 {
+      left:232.05pt;
+  }
+  .box_column3 {
+      left:376.935pt;
+  }
+  .box_column4 {
+      left:522.21pt;
+  }
+  
+  .choose_topbox {
+      background:rgb(255,245,248);
+      position:absolute;
+      width:117pt;
+      height:114pt;
+    border-radius:43px;
+    z-index:4;
+  }
+  .topbox_row1 {
+      top:427.825pt;
+  }
+  .topbox_row2 {
+      top:571.15pt;
+  }
+  .topbox_row3 {
+      top:714.475pt;
+  }
+  .topbox_row4 {
+      top:857.995pt;
+  }
+  .topbox_column1 {
+      left:90.085pt;
+  }
+  .topbox_column2 {
+      left:235.75pt;
+  }
+  .topbox_column3 {
+      left:380.635pt;
+  }
+  .topbox_column4 {
+      left:525.91pt;
+  }
+  
+  #all_cabinet {
+    background:rgb(58,56,181);
+    position:absolute;
+      width:898.82px;
+      height:1002.56px;
+    top:419.38px;
+    left:36.92px;
+    border-radius:50px;
+      opacity:0.8;
+    z-index:2;
+  }
+  
+  
+  #all_shed {
+    position:absolute;
+      top:0px;
+      left:0px;
+      z-index:2;
+  }
+  
+  .cabinet_top_rectangle_background {
+    position:absolute;
+      background:rgb(27,13,98);
+      top:473.72px;
+      height:23.4px;
+      border-radius:20px;
+      z-index:3;
+  }
+  
+  .cabinet_top_circle {
+    position:absolute;
+      top:475px;
+      z-index:3;
+  }
+  
+  #cabinet_top_rectangle_background1 {
+    position:absolute;
+      width:70.2px;
+      left:269.36px;
+  }
+  
+  #cabinet_top_rectangle_background2 {
+    position:absolute;
+      width:324.285px;
+      left:394.04px;
+  }
+  
+  #cabinet_top_circle1{
+    left:87.62px;
+  }
+  #cabinet_top_circle2{
+    left:142.74px;
+  }
+  #cabinet_top_circle3{
+    left:197.6px;
+  }
+  .cabinet_top_rectangle{
+    position:absolute;
+      background:rgb(58,56,181);
+      top:476.58px;
+      height:23.4px;
+      border-radius:20px;
+      z-index:3;
+  }
+  #cabinet_top_rectangle1 {
+    position:absolute;
+      width:70.2px;
+      left:272.22px;
+  }
+  
+  #cabinet_top_rectangle2 {
+    position:absolute;
+      width:324.285px;
+      left:396.9px;
+  }
+  
+  
+  
+  #all_background{
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:1;
+  }
+  
+  
+  .cabinet_numbers{
+    position:absolute;
+      background-image:url("https://i.imgur.com/i8Yvb94.png");
+      background-size:163px;
+    width: 163px;
+    height: 163px;
+    font-size: 63pt;
+    text-align: center;
+      color:white;
+    line-height: 159px;
+      z-index:6;
+      opacity:0;
+    }
+  
+  .selected{
+    position:absolute;
+    background-image:url("https://i.imgur.com/i8Yvb94.png");
+    background-size:163px;
+    width: 163px;
+    height: 163px;
+    font-size: 63pt;
+    text-align: center;
+    color:white;
+    line-height: 159px;
+    z-index:6;
+    opacity:1;
+  }
+  
+  #cabinet_ok {
+      position:absolute;
+      width:338px;
+      height:140.4px;
+      left:319.8px;
+      top:1349.4px;
+      z-index:3;
+      opacity:0.3;
+  }
+  
+  .cabinet_box_row1 {
+      top:436pt;
+  }
+  .cabinet_box_row2 {
+      top:579pt;
+  }
+  .cabinet_box_row3 {
+      top:722.5pt;
+  }
+  .cabinet_box_row4 {
+      top:866pt;
+  }
+  .cabinet_box_column1 {
+      left:86.385pt;
+  }
+  .cabinet_box_column2 {
+      left:232.05pt;
+  }
+  .cabinet_box_column3 {
+      left:376.935pt;
+  }
+  .cabinet_box_column4 {
+      left:522.21pt;
+  }

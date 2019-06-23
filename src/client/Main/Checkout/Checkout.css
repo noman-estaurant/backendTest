@@ -1,32 +1,34 @@
 .checklist {
+  margin: 0 auto;
   margin-top: 85px;
-  width: 331px;
-  height: 553px;
+  width: 85vw;
+  height: 88vh;
   z-index: 5px;
   bottom: 0px;
   background-color: white;
   box-shadow: 0px 3px 10px rgba(19, 0, 6, 0.78);
   border-radius: 40px;
 }
-.checklist .list {
+.checklist .container .list {
   text-align: left;
   color: black;
   position: relative;
-  top: 37px;
+  top: 45px;
   margin-left: 40px;
-  height: 405px;
+  width:65vw;
+  height: 50vh;
   overflow-y: auto;
 }
 .checklist .list .title {
   line-height: 40px;
-  margin-top: 30px;
+  margin-bottom: 23px;
   font-weight: 700;
   font-size: 17px;
 }
 .checklist .list .item {
-  margin-top: 23px;
+  margin-bottom: 23px;
   height: 34px;
-  width: 257px;
+  width:65vw;
   position: relative;
 }
 .checklist .list .item .name {
@@ -43,39 +45,38 @@
 }
 .checklist .list .item .howmuch {
   position: absolute;
-  left: 224px;
+  right:0px;
   top: 16px;
   font-weight: 700;
   font-size: 15px;
 }
-.checklist .checkout {
+.checklist .checkout__button {
   width: 85px;
   height: 43px;
   font-size: 17px;
+  color:white;
   border-radius: 21.5px;
   background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
   box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
   text-align: center;
   line-height: 43px;
   position: absolute;
-  top: 473px;
-  left: 30px;
-  color: #ffffff;
-  font-weight: bold;
-  justify-content: center;
+  left:15vw;
+  top:76vh;
 }
-.checklist .total {
+.checklist .sum {
   font-size: 17px;
   text-align: right;
   line-height: 22px;
   font-weight: 600;
   color: black;
   position: absolute;
-  top: 472px;
-  left: 247px;
+  right:15vw;
+  top:76vh;
 }
-.checklist .total .money {
+.checklist .sum .money {
   font-size: 15px;
+  margin-top: 0px;
 }
 
 #pay {
@@ -132,6 +133,169 @@
   justify-content: center;
   align-items: center;
   width: 282px;
+  height: 40px;
+  border-radius: 21.5px;
+  background: white;
+  border: solid 1px rgb(255,143,94);
+  display: flex;
+}
+
+
+#check {
+  position: fixed;
+  top: 214px;
+  margin: 0 auto;
+  left: 22px;
+  width: 331px;
+  height: 240px;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(19, 0, 6, 0.78);
+  border-radius: 40px;
+}
+#check .modal {
+  margin: auto;
+}
+#check .modal .title{
+  position:  relative;
+  top:62px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 16px;
+
+}
+#check .modal .content{
+  position:  relative;
+  top:80px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+#check .modal .button-border {
+  text-align: center;
+  line-height: 43px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 145px;
+  height: 43px;
+  position: absolute;
+  color: white;
+  top: 173px;
+  left: 22px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+#check .modal .finish {
+  z-index: 7;
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: 173px;
+  right: 5vw;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
+  height: 40px;
+  border-radius: 21.5px;
+  background: white;
+  border: solid 1px rgb(255,143,94);
+  display: flex;
+}
+#check .modal .cancel {
+  z-index: 7;
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: 173px;
+  left: 5vw;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
+  height: 40px;
+  border-radius: 21.5px;
+  background: white;
+  border: solid 1px rgb(255,143,94);
+  display: flex;
+}
+
+#game {
+  position: fixed;
+  top: 214px;
+  margin: 0 auto;
+  left: 22px;
+  width: 331px;
+  height: 240px;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(19, 0, 6, 0.78);
+  border-radius: 40px;
+}
+#game .modal {
+  margin: auto;
+}
+#game .modal .title{
+  position:  relative;
+  top:62px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 16px;
+
+}
+#game .modal .content{
+  position:  relative;
+  top:80px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+#game .modal .button-border {
+  text-align: center;
+  line-height: 43px;
+  font-size: 14px;
+  font-weight: 400;
+  width: 145px;
+  height: 43px;
+  position: absolute;
+  color: white;
+  top: 173px;
+  left: 22px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+}
+#game .modal .finish {
+  z-index: 7;
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: 173px;
+  right: 5vw;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
+  height: 40px;
+  border-radius: 21.5px;
+  background: white;
+  border: solid 1px rgb(255,143,94);
+  display: flex;
+}
+#game .modal .cancel {
+  z-index: 7;
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  top: 173px;
+  left: 5vw;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
   height: 40px;
   border-radius: 21.5px;
   background: white;

@@ -13,7 +13,8 @@ class Order extends Component {
         <Navigationbar handleBack={handleBack} header={'點餐'} cart={0} template={1}/>
         <div id="people">
           <div id="one" onClick={() => {
-            window.location.href = `#/main/order/${id}/one`
+            localStorage.setItem('type', 'one');
+            window.location.href = `#/main/order/${id}/menu`
           }}>
             <img src="src/Unmanned restaurant-05@2x.png" />
             <p>個人</p>

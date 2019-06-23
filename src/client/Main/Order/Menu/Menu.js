@@ -8,12 +8,26 @@ class Menu extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      page: 0,
-      header: '點餐',
-      handleBack: () => {
-        const id = window.location.hash.split('/')[3]
-        window.location.href = `#/main/order/${id}`
+    if(localStorage.getItem('type')=="one"){  
+      console.log("dddd");
+      this.state = {
+        page: 0,
+        header: '點餐',
+        handleBack: () => {
+          const id = window.location.hash.split('/')[3]
+          window.location.href = `#/main/order/${id}`
+        }
+      }
+    }
+    else{  
+      console.log("ddddddd");
+      this.state = {
+        page: 0,
+        header: '揪團點餐',
+        handleBack: () => {
+          const id = window.location.hash.split('/')[3]
+          window.location.href = `#/main/order/${id}`
+        }
       }
     }
   }

@@ -8,9 +8,10 @@ class ShoppingCart extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showMain: false
+      showMain: false,
     }
   }
+
 
   handleMain = () => {
     this.setState({
@@ -23,6 +24,7 @@ class ShoppingCart extends Component {
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const sideMoney = showOrder().side.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const drinkMoney = showOrder().drink.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
+    let modal
     return (
       <div style={{height: '100vh'}}>
         <Navigationbar handleBack={handleBack} header={' 購物車 '} cart={0} template={0}/>
@@ -104,15 +106,15 @@ class ShoppingCart extends Component {
           ?
             null
           :
-          (
-            <div class='checkout'>
-              <Link class='checkout__button' to='/main/checkout'>結帳</Link>
-              <div class='checkout__info'>
-                <p class='info__money'>總金額</p>
-                <p class='info__number'>{`$ ${mainMoney + sideMoney + drinkMoney}`}</p>
-              </div>
-            </div>
-          )
+           (
+           <div class='checkout'>
+           <Link class='checkout__button' to='/main/checkout'>結帳</Link>
+           <div class='checkout__info'>
+             <p class='info__money'>總金額</p>
+             <p class='info__number'>{`$ ${mainMoney + sideMoney + drinkMoney}`}</p>
+           </div>
+         </div>
+           )
         }
       </div>
     )

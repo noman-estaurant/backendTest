@@ -2,8 +2,18 @@ import React, { Component } from 'react'
 import './Navigationbar.css'
 
 class Navigationbar extends Component {
+  
+  state = {
+    fav:false
+  }
+  starImage = () => this.state.fav ? 'src/star.png' : 'src/nullstar.png'
+
+  componentDidMount() {
+    $("#hint").hide();
+  }
+
   render() {
-    const { handleBack, header, cart, template, sum } = this.props
+    const { handleBack, header, cart, template, sum ,fav} = this.props
     let number = 0
     if (sum) {
       number = sum
@@ -36,6 +46,23 @@ class Navigationbar extends Component {
           <div class="added">{number}</div>
           : null
         }
+        {
+          fav === 1 ? 
+          <img class="cart" src={this.starImage()} onClick={() => {
+            $("#hint").show();
+//            window.location.href = '#/main/shoppingcart'
+            this.setState({
+              fav: true
+            })  
+          }} />
+          : null
+        }
+        <div id="hint" onClick={() => {
+            $("#hint").hide();
+          }} >
+          <div class="hint__title">我的最愛</div>
+          <div class="hint__content">您可將喜愛的餐點加入我的最愛<br/>提供您下次點餐</div>         
+        </div>
       </div>
     )
   }

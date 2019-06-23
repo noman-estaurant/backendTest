@@ -46,8 +46,8 @@
 .cartPage .cartPage__notempty .notempty__meal {
   display: flex;
   margin-left: 22px;
+  margin-right: 22px;
   margin-top: 25px;
-  width: 331px;
   height: 93px;
   background: #ffffff;
   border-radius: 38px;
@@ -186,4 +186,8 @@
   font-size: 15px;
   font-weight: bold;
   margin-left: 10px;
+}
+
+.is-blurred {
+  filter: blur(10px);
 }

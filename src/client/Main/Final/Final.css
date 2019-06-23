@@ -1,0 +1,150 @@
+
+.fcontainer {
+  position: relative;
+}
+
+.checklist {
+  margin: 0 auto;
+  margin-top: 85px;
+  width: 85vw;
+  height: 75vh;
+  z-index: 5px;
+  bottom: 0px;
+  background-color: white;
+  box-shadow: 0px 3px 10px rgba(19, 0, 6, 0.78);
+  border-radius: 40px;
+}
+.checklist .list {
+  text-align: left;
+  color: black;
+  position: relative;
+  top: 145px;
+  margin-left: 40px;
+  width:65vw;
+  height: 24vh;
+  overflow-y: auto;
+}
+.checklist .list .item {
+  margin-top: 23px;
+  height: 34px;
+  width:65vw;
+  position: relative;
+}
+.checklist .list .item .name {
+  position: absolute;
+  top: 0px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.checklist .list .item .detail {
+  position: absolute;
+  top: 20px;
+  font-weight: 400;
+  font-size: 10px;
+}
+.checklist .list .item .howmuch {
+  position: absolute;
+  right:0px;
+  top: 16px;
+  font-weight: 700;
+  font-size: 15px;
+}
+.checklist .checkout {
+  width: 85px;
+  height: 43px;
+  font-size: 17px;
+  border-radius: 21.5px;
+  background: linear-gradient(90deg, #ff78ab 10%, #ff8f5e 90%);
+  box-shadow: 0px 2px 5px rgba(158, 77, 100, 0.5);
+  text-align: center;
+  line-height: 43px;
+  position: absolute;
+  top: 473px;
+  left: 30px;
+}
+.checklist .total {
+  font-size: 17px;
+  text-align: right;
+  line-height: 22px;
+  font-weight: 600;
+  color: black;
+  position: absolute;
+  right:10vw;
+  top:63vh;
+}
+.checklist .total .money {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.list__title {
+  position: relative;
+  top: 140px;
+  left:40px;
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 17px;
+  color:black;
+
+}
+.prograss__title{
+  color:black;
+  position: relative;
+  top: 61px;
+  left:40px;
+  font-weight: 600;
+  font-size: 17px;
+
+}
+
+.prograss__bar{
+  position: relative;
+  top: 91px;
+  left:40px;
+  border-top: 1.2px solid rgb(255,123,159);
+  width: 220px;
+  height:50px;
+}
+
+.bar__status1{
+  position: relative;
+  top: -10px;
+  left:0px;
+  width: 30px;
+  height:40px;
+  background: #ffffff;
+}
+
+.bar__status2{
+  position: absolute;
+  top: -10px;
+  left:100px;
+  width: 30px;
+  height:40px;
+  background: #ffffff;
+}
+
+.bar__status3{
+  position: absolute;
+  top: -10px;
+  left:200px;
+  width: 30px;
+  height:40px;
+  background: #ffffff;
+}
+
+.circle{
+  border-radius: 18px;
+  border: solid 1px rgb(255,123,159);
+  width:18px;
+  height: 18px;
+  margin-left: 5px;
+}
+.content{
+  color:black;
+  font-size:8px;
+  margin-top:6px;
+  margin-left: 3px;
+  font-weight: 300;
+}
+/*# sourceMappingURL=style.css.map */
