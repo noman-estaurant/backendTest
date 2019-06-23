@@ -2,12 +2,20 @@ import React, { Component } from 'react'
 import './Profile.css'
 import Navigationbar from '../Common/Navigationbar'
 import Tabbar from '../Common/Tabbar'
+import Flag from '../Common/Flag'
 
 class Profile extends Component {
 
   render() {
+    const showFlag = () => {
+        if(localStorage.getItem('type')!="one"){ 
+          console.log("dsfeweq");
+          return( <Flag /> )
+        }
+      }
     return (
         <div>
+            {showFlag()}
             <div class="profilebody">
             <Navigationbar handleBack={null} header={'我'} cart={0} template={0}/>
             <div class="main_profile">

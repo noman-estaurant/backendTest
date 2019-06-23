@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import MainMeal from './MainMeal/MainMeal'
 import Tabbar from '../../Common/Tabbar'
 import Navigationbar from '../../Common/Navigationbar'
+import Flag from '../../Common/Flag'
+
 import './Menu.css'
 
 class Menu extends Component {
@@ -44,6 +46,12 @@ class Menu extends Component {
   }
 
   render() {
+    const showFlag = () => {
+      if(localStorage.getItem('type')!="one"){ 
+        console.log("dsfeweq");
+        return( <Flag /> )
+      }
+    }
     const { handleMain, handleSide, handleDrink, sum } = this.props
     const GetPage = () => {
       const ChangePage = (page, header, handleBack) => {
@@ -84,9 +92,8 @@ class Menu extends Component {
     return (
       <div>
         <Navigationbar handleBack={this.state.handleBack} header={this.state.header} cart={1} template={1} sum={sum}/>
-          {
-            GetPage()
-          }
+          { GetPage() }
+          { showFlag() }
         <Tabbar />
       </div>
     )

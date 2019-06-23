@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Navigationbar from '../Common/Navigationbar'
+import Flag from '../Common/Flag'
+
 import './ShoppingCart.css'
 
 class ShoppingCart extends Component {
@@ -25,8 +27,15 @@ class ShoppingCart extends Component {
     const sideMoney = showOrder().side.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const drinkMoney = showOrder().drink.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     let modal
+    const showFlag = () => {
+      if(localStorage.getItem('type')!="one"){ 
+        console.log("dsfeweq");
+        return( <Flag /> )
+      }
+    }
     return (
       <div style={{height: '100vh'}}>
+        {showFlag()}
         <Navigationbar handleBack={handleBack} header={' 購物車 '} cart={0} template={0}/>
         <div class='cartPage'>
           {

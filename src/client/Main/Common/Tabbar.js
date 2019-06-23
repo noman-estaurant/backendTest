@@ -19,6 +19,7 @@ class Order extends Component {
     coupon:false,
     profile:false
   }
+  
   toggleHomeImage = () => {
     console.log("ff")
     if(this.state.home === false){

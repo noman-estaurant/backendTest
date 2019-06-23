@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Tabbar from '../../../Common/Tabbar'
 import Navigationbar from '../../../Common/Navigationbar'
+import Flag from '../../../Common/Flag'
+
 import './Follow.css'
 
 class Follow extends Component {
@@ -23,7 +25,6 @@ class Follow extends Component {
         <div class="button"onClick={() => {
               window.location.href = `#/main/order/${id}/menu`
           }}>完成</div>
-        
       </div>
     )
   }

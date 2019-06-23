@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Tabbar from '../../../Common/Tabbar'
 import Navigationbar from '../../../Common/Navigationbar'
+import Flag from '../../../Common/Flag'
+
 import './Host.css'
 
 class Host extends Component {
@@ -38,6 +40,7 @@ class Host extends Component {
         <div class="finish"onClick={() => {
               window.location.href = `#/main/order/${id}/menu`
             }}>完成</div>
+            
       </div>
     )
   }

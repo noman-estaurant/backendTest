@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Navigationbar from '../Common/Navigationbar'
+import Flag from '../Common/Flag'
+
 import './Checkout.css'
 
 class Checkout extends Component {
@@ -80,8 +82,15 @@ class Checkout extends Component {
     const type = localStorage.getItem('type')
     const { showOrder } = this.props
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
+    const showFlag = () => {
+      if(localStorage.getItem('type')!="one"){ 
+        console.log("dsfeweq");
+        return( <Flag /> )
+      }
+    }
     return (
       <div style={{display: 'flex', justifyContent: 'center', background: 'rgb(255, 123, 159)', height: '100vh'}}>
+        {showFlag()}
         <Navigationbar handleBack={() => {window.location.href = '/#/main/shoppingcart'}} header={' 結帳 '} cart={0} template={0} fav={1}/>
         <div class="checklist" style={this.state.modalon ? {filter: 'blur(10px)'} : null}>
           <div class="container">
