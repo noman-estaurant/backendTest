@@ -24,7 +24,8 @@ class Main extends Component {
       main: [],
       side: [],
       drink: [],
-      store: null
+      store: null,
+      coupon: null
     }
   }
 
@@ -65,6 +66,19 @@ class Main extends Component {
     }
   }
 
+  getCoupon = (num) => {
+    this.setState({
+      coupon: num
+    })
+  }
+
+  showCoupon = () => {
+    const coupon = this.state.coupon
+    return {
+      coupon
+    }
+  }
+
   deleteOrder = (type, value, position) => {
     const temp = value.filter((element, index) => {
       return index !== position
@@ -89,7 +103,7 @@ class Main extends Component {
           orderId
         })
       })
-    }
+    } 
   }
 
   render() {
@@ -179,17 +193,11 @@ class Main extends Component {
           <Coupon
             {...props}
             {...localStorage.setItem('tab', 'coupon')}
+            showCoupon={this.showCoupon}
+
             />}
           /> 
-          <Route exact path='/main/couponget' render={props =>
-            <Coupon
-              {...props}
-              get={1}
-              {...localStorage.setItem('main', '/main/final')}
-
-              {...localStorage.setItem('tab', 'coupon')}
-              />}
-            />
+          
           <Route path='/main/checkout' render={props =>
           <Checkout
             {...props}
@@ -201,9 +209,11 @@ class Main extends Component {
           />
           <Route path='/main/game' render={props =>
           <Game
-            {...localStorage.setItem('main', '/main/game')}
+            {...localStorage.setItem('main', '/main/final')}
             {...localStorage.setItem('tab', 'main')}
             {...props}
+            getCoupon={this.getCoupon}
+
             
             />}
           />

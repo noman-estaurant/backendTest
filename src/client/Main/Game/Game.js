@@ -4,7 +4,7 @@ import Navigationbar from '../Common/Navigationbar'
 import Tabbar from '../Common/Tabbar'
 
 var temperate_selection
-
+var num = 0;
 class Game extends Component {
 
     constructor(props) {
@@ -18,6 +18,8 @@ class Game extends Component {
     
 
     componentDidMount () {
+        const { getCoupon } = this.props
+
         var selected_box_row=['cabinet_box_row1','cabinet_box_row2','cabinet_box_row3','cabinet_box_row4']
         var selected_box_column=['cabinet_box_column1','cabinet_box_column2','cabinet_box_column3','cabinet_box_column4']
         var condition_number=0
@@ -42,6 +44,7 @@ class Game extends Component {
             });
       
             $('#cabinet_ok').on('click', function() {
+                localStorage.setItem('main', '/main/final')
                  temperate_selection=(($(temperate_selection).attr('id')));
       
                    if (condition_number==1){ 
@@ -59,7 +62,7 @@ class Game extends Component {
                             break;
                           }
                       }
-
+                    
            
                       console.log(temperate_selection);
                       var str = temperate_selection;
@@ -67,6 +70,11 @@ class Game extends Component {
                       var str = res.join("");
                       console.log(str);
                       $("#game_finish2").html("您的取餐格是"+str+"號！")
+                      
+                      localStorage.setItem('main', '/main/final')
+                      num++
+                      getCoupon(num)
+
                       $('#game_finish_back, .game_finish').show(1); 
                       $('#game_finish1, #game_finish2').delay(1500).fadeOut(800);
                       $('#game_finish_coupon, #game_finish_coupon_get').delay(3000).show(800);              
@@ -155,7 +163,7 @@ class Game extends Component {
             </div>
             <img src="https://i.imgur.com/S6CWG3l.png" alt="game_finish_coupon" id="game_finish_coupon"></img>
             <div id="game_finish_coupon_get" onClick={() => {
-                window.location.href = '#/main/couponget'
+                window.location.href = '#/main/coupon'
              }} >領取</div>
 
         </div>

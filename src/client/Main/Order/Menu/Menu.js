@@ -62,26 +62,54 @@ class Menu extends Component {
         })
       }
       switch(this.state.page) {
-        case 0:
-          return (
-            <div id="big-menu">
-              <div id="main-meal" onClick={() => {
-                ChangePage(1, '主餐', this.detailBack)
-              }}>
-                  <img src="src/unmannedRestaurant07@2x.png" />
-                  <p>主餐</p>
+        case 0:{
+          if(localStorage.getItem('type')=="one"){
+            return (
+              <div id="big-menu">
+                <div id="main-meal" onClick={() => {
+                  ChangePage(1, '主餐', this.detailBack)
+                }}>
+                    <img src="src/unmannedRestaurant07@2x.png" />
+                    <p>主餐</p>
+                </div>
+                <div id="side-meal">
+                    <img src="src/unmannedRestaurant08@2x.png" />
+                    <p>副餐</p>
+                </div>
+                <div id="drinks">
+                    <img src="src/unmannedRestaurant09@2x.png" />
+                    <p>飲料</p>
+                </div>
               </div>
-              <div id="side-meal">
-                  <img src="src/unmannedRestaurant08@2x.png" />
-                  <p>副餐</p>
+            )
+            break
+          }
+          else{
+            return (
+              <div id="big-menu">
+                <div id="main-meal" onClick={() => {
+                  ChangePage(1, '主餐', this.detailBack)
+                }}>
+                    <img src="src/unmannedRestaurant07@2x.png" />
+                    <p>主餐</p>
+                </div>
+                <div id="side-meal">
+                    <img src="src/unmannedRestaurant08@2x.png" />
+                    <p>副餐</p>
+                </div>
+                <div id="drinks">
+                    <img src="src/unmannedRestaurant09@2x.png" />
+                    <p>飲料</p>
+                </div>
+                <div id="groupmeal">
+                    <img src="src/groupmeal.png" />
+                    <p>揪團專屬</p>
+                </div>
               </div>
-              <div id="drinks">
-                  <img src="src/unmannedRestaurant09@2x.png" />
-                  <p>飲料</p>
-              </div>
-            </div>
-          )
-          break
+            )
+            break
+          }
+        }      
         case 1:
           return (
             <MainMeal handleMain={handleMain}/>
