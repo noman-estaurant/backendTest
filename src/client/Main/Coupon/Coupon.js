@@ -16,7 +16,7 @@ class Coupon extends Component {
                 <img class="couponlist__item" src="src/coupon.png"></img>
                 <img class="couponlist__item" src="src/coupon.png"></img>
             </div>
-            <Tabbar profileImg ={"src/profileclick.png"}/>
+            <Tabbar coupon ={1} main={0} profile={0}/>
             </div>
         </div>
     )

@@ -51,7 +51,7 @@ class Final extends Component {
                 </div>
             </div>
         </div>
-        <Tabbar />
+        <Tabbar coupon ={0} main={1} profile={0}/>
     </div>
     )
   }

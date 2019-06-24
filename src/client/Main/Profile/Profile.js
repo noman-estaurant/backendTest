@@ -48,7 +48,7 @@ class Profile extends Component {
                 </div>
 
         </div>
-        <Tabbar profileImg ={"profileClick"}/>
+        <Tabbar coupon ={0} main={0} profile={1}/>
     </div>
     )
   }

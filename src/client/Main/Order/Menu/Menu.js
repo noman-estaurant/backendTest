@@ -94,7 +94,7 @@ class Menu extends Component {
         <Navigationbar handleBack={this.state.handleBack} header={this.state.header} cart={1} template={1} sum={sum}/>
           { GetPage() }
           { showFlag() }
-        <Tabbar />
+        <Tabbar coupon ={0} main={1} profile={0}/>
       </div>
     )
   }

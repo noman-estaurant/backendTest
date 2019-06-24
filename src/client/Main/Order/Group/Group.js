@@ -25,7 +25,7 @@ class Group extends Component {
             <p>跟團</p>
           </div>
         </div>
-        <Tabbar />
+        <Tabbar coupon ={0} main={1} profile={0}/>
       </div>
     )
   }

@@ -98,19 +98,27 @@ class Main extends Component {
         <div>
           <Route exact path='/main' render={
             props => 
-              <Home {...props} 
-              handleStore={this.handleStore}
+              <Home 
+                {...props} 
+                {...localStorage.setItem('main', '/main')}
+                {...localStorage.setItem('tab', 'main')}
+                handleStore={this.handleStore}
              />}/>
           <Route exact path='/main/order/:id' render={
             props =>
               <Order
                 {...props}
+                {...localStorage.setItem('main', '/main/order/:id')}
+                {...localStorage.setItem('tab', 'main')}
                 handleBack={() => window.location.href = '#/main'}
               />} />
           <Route exact path='/main/order/:id/menu' render={
             props =>
               <Menu
                 {...props}
+                {...localStorage.setItem('main', '/main/order/:id/menu')}
+                {...localStorage.setItem('tab', 'main')}
+
                 handleMain={this.handleMain}
                 handleSide={this.handleSide}
                 handleDrink={this.handleDrink}
@@ -123,6 +131,8 @@ class Main extends Component {
             props =>
               <Group
                 {...props}
+                {...localStorage.setItem('main', '/main/order/:id/many')}
+                {...localStorage.setItem('tab', 'main')}
                 handleBack={() => {window.location.href = '#/main/order/:id/'}}
 
               />
@@ -132,6 +142,8 @@ class Main extends Component {
             props =>
               <Host
                 {...props}
+                {...localStorage.setItem('main', '/main/order/:id/many/host')}
+                {...localStorage.setItem('tab', 'main')}
                 handleBack={() => {window.location.href = '#/main/order/:id/many'}}
               />
             }
@@ -140,6 +152,8 @@ class Main extends Component {
             props =>
               <Follow
                 {...props}
+                {...localStorage.setItem('main', '/main/order/:id/many/follow')}
+                {...localStorage.setItem('tab', 'main')}
                 handleBack={() => {window.location.href = '#/main/order/:id/many'}}
               />
             }
@@ -147,6 +161,8 @@ class Main extends Component {
           <Route path='/main/shoppingcart' render={props =>
           <ShoppingCart
             {...props}
+            {...localStorage.setItem('main', '/main/shoppingcart')}
+            {...localStorage.setItem('tab', 'main')}
             handleBack={() => window.location.href = `#/main/order/${this.state.store}/menu`}
             showOrder={this.showOrder}
             deleteOrder={this.deleteOrder}
@@ -156,22 +172,28 @@ class Main extends Component {
           <Route exact path='/main/profile' render={props =>
           <Profile
             {...props}
+            {...localStorage.setItem('tab', 'profile')}
             />}
           />
            <Route exact path='/main/coupon' render={props =>
           <Coupon
             {...props}
+            {...localStorage.setItem('tab', 'coupon')}
             />}
           />
           <Route path='/main/checkout' render={props =>
           <Checkout
             {...props}
+            {...localStorage.setItem('main', '/main/checkout')}
+            {...localStorage.setItem('tab', 'main')}
             handleBack={() => window.location.href = `#/main/order/${this.state.store}`}
             showOrder={this.showOrder}
             />}
           />
           <Route path='/main/game' render={props =>
           <Game
+            {...localStorage.setItem('main', '/main/game')}
+            {...localStorage.setItem('tab', 'main')}
             {...props}
             
             />}
@@ -180,6 +202,8 @@ class Main extends Component {
           <Route exact path='/main/final' render={props =>
           <Final
             {...props}
+            {...localStorage.setItem('main', '/main/final')}
+            {...localStorage.setItem('tab', 'main')}
             showOrder={this.showOrder}
             />}
           />
