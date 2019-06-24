@@ -213,8 +213,6 @@ class Main extends Component {
             {...localStorage.setItem('tab', 'main')}
             {...props}
             getCoupon={this.getCoupon}
-
-            
             />}
           />
           <Route path='/main/pay' component={Pay} />

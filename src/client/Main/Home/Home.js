@@ -90,14 +90,14 @@ class Home extends Component {
     }
     return (
       <div class="main_body">
-        <Navigationbar handleBack={null} header={'LOGO'} cart={0} template={0}/>
+        <Navigationbar handleBack={null} header={'黑膠漢堡'} cart={0} template={0}/>
         <div class="index" id="app">
           {
             this.state.Data.map((data, index) => {
               return (
                 <div class="namecard">
                   <img src="src/ClipMap.png" alt="" class="clip_map" id="No.1" onClick={() => initDirection(index, data.lat, data.lng)}/>
-                  <div class="info">
+                  <div class="minfo">
                     <div class="storedata">
                         <p class="Store">{data.name}</p>
                         <p class="adress">{data.address}</p>
