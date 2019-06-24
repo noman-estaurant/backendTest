@@ -21,9 +21,9 @@ body {
 }
 
 #topic:first-of-type img {
-  position: absolute;
+  position: relative;
   top: 117px;
-  left: 36px;
+  margin:0 auto;
   width: 288px;
 }
 
@@ -37,9 +37,10 @@ body {
 #text {
   font-size: 14px;
   line-height: 16px;
-  position: absolute;
-  top: 373px;
-  left: 65px;
+  position: relative;
+  top: 22vh;
+  weight:100vw;
+  margin: 0 auto;
   color: rgb(74, 74, 74);
   font-weight: 300;
 }
@@ -57,11 +58,11 @@ body {
 
 #button {
   position: absolute;
-  top: 547px;
-  left: 46px;
+  bottom: 10vh;
+  left: 15vw;
+  right: 15vw;
   border-radius: 21.5px;
   height: 43px;
-  width: 285px;
   background: linear-gradient(90deg, rgb(255, 120, 171) 10%, rgb(255, 143, 94)90%);
   color: white;
   text-align: center;

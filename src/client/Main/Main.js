@@ -180,7 +180,16 @@ class Main extends Component {
             {...props}
             {...localStorage.setItem('tab', 'coupon')}
             />}
-          />
+          /> 
+          <Route exact path='/main/couponget' render={props =>
+            <Coupon
+              {...props}
+              get={1}
+              {...localStorage.setItem('main', '/main/final')}
+
+              {...localStorage.setItem('tab', 'coupon')}
+              />}
+            />
           <Route path='/main/checkout' render={props =>
           <Checkout
             {...props}

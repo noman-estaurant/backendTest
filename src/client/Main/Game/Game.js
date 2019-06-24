@@ -155,7 +155,7 @@ class Game extends Component {
             </div>
             <img src="https://i.imgur.com/S6CWG3l.png" alt="game_finish_coupon" id="game_finish_coupon"></img>
             <div id="game_finish_coupon_get" onClick={() => {
-                window.location.href = '#/main/coupon'
+                window.location.href = '#/main/couponget'
              }} >領取</div>
 
         </div>

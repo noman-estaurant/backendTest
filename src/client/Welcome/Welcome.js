@@ -43,7 +43,7 @@ class Welcome extends Component {
 							</div>
 							<div id='text'>
 								<p class='title'>優質餐點</p>
-								<p class='content'>
+								<p>
 									我們提供優質的餐點及充滿樂趣的點餐
 									<br />
 									方式，參與歡樂共同分享。
@@ -56,7 +56,7 @@ class Welcome extends Component {
 							</div>
 							<div id='text'>
 								<p class='title'>智慧點餐</p>
-								<p class='content'>
+								<p >
 									我們提供最符合無人餐廳的服務模式，
 									<br />
 									與好友、同事、家人體驗點餐樂趣。
