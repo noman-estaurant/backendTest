@@ -30,7 +30,7 @@ class Host extends Component {
     this.state.ws.emit('state_1',userData);
     this.state.ws.emit('Mkroom',userData);
 
-    localStorage.setItem('room_id', this.state.groupid);
+    localStorage.setItem('room_id', this.state.groupid.toString());
 
     console.log("ccdddc")
   }

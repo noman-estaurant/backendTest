@@ -25,8 +25,8 @@ class ShoppingCart extends Component {
   componentDidMount(){
     if(this.props.sum != 0){
       var userData = {}
-      userData['id']=localStorage.getItem('room_id');
-      userData['name']=localStorage.getItem("name");
+      userData['id']=localStorage.getItem('room_id').toString();
+      userData['name']=localStorage.getItem('name').toString();
       this.state.ws.emit('state_2',userData);
     }
   }

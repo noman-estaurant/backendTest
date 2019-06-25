@@ -34,7 +34,7 @@ class Follow extends Component {
       userData['name']=localStorage.getItem("name");
       this.state.ws.emit('state_1',userData);
 
-      localStorage.setItem('room_id', document.getElementById('room_id').value);
+      localStorage.setItem('room_id', document.getElementById('room_id').value.toString());
 
       const { id } = this.props.match.params
       window.location.href = `#/main/order/${id}/menu`

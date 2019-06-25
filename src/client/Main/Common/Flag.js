@@ -95,6 +95,31 @@ class Flag extends Component {
     item.addEventListener("touchmove", touchMove, false)
     item.addEventListener("touchend", touchEnd, false)
     item.addEventListener("touchend", touchExpand, false)
+
+    this.state.ws.on('inroom',(Data)=>{
+        console.log('inroom',Data)
+         this.setState({
+            peopleinroom: Data
+        })
+    });
+    this.state.ws.on('state_1_res',(Data)=>{
+        console.log('111',Data)
+        this.setState({
+            peopleinstate1: [...this.state.peopleinstate1,Data]
+        })
+    });
+    this.state.ws.on('state_2_res',(Data)=>{
+        console.log('222',Data)
+        this.setState({
+            peopleinstate2: [...this.state.peopleinstate2,Data]
+        })
+    });
+    this.state.ws.on('state_3_res',(Data)=>{
+        console.log('333',Data)
+        this.setState({
+            peopleinstate3: [...this.state.peopleinstate3,Data]
+        })
+    });
   }
 
 
@@ -104,40 +129,12 @@ class Flag extends Component {
     const host = this.state.peopleinroom[0]
     const done = this.state.peopleinstate3.length
     const all = this.state.peopleinroom.length
-    if(this.state.open==1){
+   
         //this.state.peopleinstate1.splice(this.state.peopleinstate1.indexOf(""), 1); 
-        socket.on('inroom',(Data)=>{
-            console.log('inroom',Data)
-             this.setState({
-                peopleinroom: Data
-            })
-        });
-        socket.on('state_1_res',(Data)=>{
-            console.log('111',Data)
-            this.setState({
-                peopleinstate1: [...this.state.peopleinstate1,Data]
-            })
-        });
-        socket.on('state_2_res',(Data)=>{
-            console.log('222',Data)
-            this.setState({
-                peopleinstate2: [...this.state.peopleinstate2,Data]
-            })
-        });
-        socket.on('state_3_res',(Data)=>{
-            console.log('333',Data)
-            this.setState({
-                peopleinstate3: [...this.state.peopleinstate3,Data]
-            })
-        });
-        console.log('1',this.state.peopleinstate1);
-
-        console.log('2',this.state.peopleinstate2);
-
-        console.log('3',this.state.peopleinstate3);
-
-    }     
-  
+        
+    console.log('1',this.state.peopleinstate1);
+    console.log('2',this.state.peopleinstate2);
+    console.log('3',this.state.peopleinstate3);
     
     console.log("??");
 
