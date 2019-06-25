@@ -12,9 +12,10 @@ class Host extends Component {
     super(props)
     this.state = {
       seconds: 60,
-      groupid: 503929
+      groupid: 0
     }
   }
+
   clock = () => {
     this.setState({seconds: this.state.seconds-1});
     if(this.state.seconds==0)
@@ -22,6 +23,7 @@ class Host extends Component {
   }
   componentDidMount () {
     this.timer = setInterval(this.clock, 1000);
+    
   }
   componentWillUnmount(){
     clearInterval(this.timer);
@@ -29,6 +31,22 @@ class Host extends Component {
   render() {
     const { id } = this.props.match.params
     const { handleBack } = this.props
+    const { setUser } = this.props
+    const { userData } = this.props
+    const { socket } = this.props
+    const { getUserData } = this.props
+
+    if(this.state.groupid==0){
+      userData['name']=localStorage.getItem('name')
+      socket.emit('Master',localStorage.getItem('name'));
+      socket.on('id_info',(id)=>{
+        userData['id']=id;
+        userData['Master']=true;
+        setUser(true,id,localStorage.getItem('name'))
+        this.setState({groupid: id});
+      });
+      socket.emit('state_1',userData);
+    }
     return (
       <div>
         <Navigationbar handleBack={this.props.handleBack} header={'開團'} cart={0} template={1}/>
@@ -40,7 +58,6 @@ class Host extends Component {
         <div class="finish"onClick={() => {
               window.location.href = `#/main/order/${id}/menu`
             }}>完成</div>
-            
       </div>
     )
   }

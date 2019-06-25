@@ -44,7 +44,7 @@ class Game extends Component {
             });
       
             $('#cabinet_ok').on('click', function() {
-                localStorage.setItem('main', '/main/final')
+                localStorage.setItem('main', '/main/checkout')
                  temperate_selection=(($(temperate_selection).attr('id')));
       
                    if (condition_number==1){ 
@@ -71,7 +71,7 @@ class Game extends Component {
                       console.log(str);
                       $("#game_finish2").html("您的取餐格是"+str+"號！")
                       
-                      localStorage.setItem('main', '/main/final')
+                      localStorage.setItem('main', '/main/checkout')
                       num++
                       getCoupon(num)
 

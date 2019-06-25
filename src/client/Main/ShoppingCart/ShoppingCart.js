@@ -26,11 +26,16 @@ class ShoppingCart extends Component {
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const sideMoney = showOrder().side.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const drinkMoney = showOrder().drink.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
+    const { userData } = this.props
+    const { socket } = this.props
+    const { getUserData } = this.props
+    const type = localStorage.getItem('type')
+
     let modal
     const showFlag = () => {
       if(localStorage.getItem('type')!="one"){ 
         console.log("dsfeweq");
-        return( <Flag /> )
+        return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
       }
     }
     return (
@@ -51,6 +56,7 @@ class ShoppingCart extends Component {
             )
             :
             (
+             
             <div class='cartPage__notempty notempty'>
               <div class='notempty__meal meal' style={{marginTop: '83px'}} onClick={this.handleMain} >
                 <img class='meal__img' src='src/unmannedRestaurant07@2x.png' />

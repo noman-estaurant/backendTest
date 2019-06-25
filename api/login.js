@@ -7,6 +7,18 @@ router.get('/', (req, res) => {
   res.send('login')
 })
 
+router.post('/no', async (req, res) => {
+  try {
+    res.status(200).send({
+      status: 'successful',
+    })
+  } catch(e) {
+    res.status(500).send({
+      status: 'error',
+    })
+  }
+})
+
 router.post('/google', async (req, res) => {
     try {
       const jwt = await createByGoogle(req.body.token)

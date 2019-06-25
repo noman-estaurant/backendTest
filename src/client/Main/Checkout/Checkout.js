@@ -16,6 +16,9 @@ class Checkout extends Component {
     $("#pay").hide();
     $("#check").hide();
     $("#game").hide()
+    if(localStorage.getItem('done')==true){ 
+      $(".checkout__button").hide()
+    }
   }
 
   modal = (type) => {
@@ -79,14 +82,20 @@ class Checkout extends Component {
   }
 
   render() {
+    
     const type = localStorage.getItem('type')
     const { showOrder } = this.props
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
+    const { userData } = this.props
+    const { socket } = this.props
+    const { getUserData } = this.props
+
     const showFlag = () => {
       if(localStorage.getItem('type')!="one"){ 
         console.log("dsfeweq");
-        return( <Flag /> )
+        return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
       }
+      
     }
     return (
       <div style={{display: 'flex', justifyContent: 'center', background: 'rgb(255, 123, 159)', height: '100vh'}}>
@@ -121,7 +130,7 @@ class Checkout extends Component {
                 body: JSON.stringify({
                   "amount": `${mainMoney}`,
                   // TODO: confirmUrl填入訂單完成的網址，我做一次在main page裡面，你們之後在依樣畫葫蘆即可
-                  "confirmUrl": "https://luffy.ee.ncku.edu.tw:17785/#/main",
+                  "confirmUrl": "https://luffy.ee.ncku.edu.tw:17785/#/main/final",
                   "productName": "訂單",
                   "currency": "TWD",
                   "token": `${localStorage.getItem('token')}`
@@ -172,6 +181,13 @@ class Checkout extends Component {
             }}>取消</div>
             <div class="finish" onClick={() => {  
               console.log("gg")
+              
+              $("#game").hide()
+              $(".checkout__button").hide()
+              $(".sum").show()
+              this.setState({
+                modalon: false
+              })
               window.location.href = '#/main/game'
                   }}>領取</div>
           </div>

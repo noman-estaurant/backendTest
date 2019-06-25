@@ -23,6 +23,18 @@ class Login extends Component {
 	}
 
 	render() {
+		const Login = () => {
+			// $.post(
+			// 	'https://luffy.ee.ncku.edu.tw:17785/api/login/no',
+			// 	{
+			// 		name: 'undefine',
+			// 	},
+			// 	result => {
+					localStorage.setItem('name','unknown user '+Math.floor(Math.random()*8999+1000))
+					window.location.href = '#/main/order/0'
+				}
+		//	)
+		
 		const fbLogin = () => {
 			FB.login(
 				response => {
@@ -36,6 +48,8 @@ class Login extends Component {
 							response => {
 								//FB登入視窗點擊登入後，會將資訊回傳到此處。
 								//資訊傳到這裡：
+								localStorage.setItem('name', response.name)
+								console.log(response)
 								$.post(
 									'https://luffy.ee.ncku.edu.tw:17785/api/login/facebook',
 									{
@@ -71,7 +85,7 @@ class Login extends Component {
 				<button class='login-button login-button--facebook' onClick={fbLogin}>
 					使用 Facebook 註冊
 				</button>
-				<button class='login-button'>
+				<button class='login-button' onClick={Login}>
 					免註冊使用
 				</button>
 				<h1 style={{fontSize: '12pt'}}>或</h1>

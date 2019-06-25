@@ -7,10 +7,14 @@ import Flag from '../Common/Flag'
 class Profile extends Component {
 
   render() {
+    const { userData } = this.props
+    const { socket } = this.props
+    const { getUserData } = this.props
+    var name = localStorage.getItem('name');
     const showFlag = () => {
         if(localStorage.getItem('type')!="one"){ 
           console.log("dsfeweq");
-          return( <Flag /> )
+          return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
         }
       }
     return (
@@ -20,8 +24,8 @@ class Profile extends Component {
             <Navigationbar handleBack={null} header={'我'} cart={0} template={0}/>
             <div class="main_profile">
                 <div class="head">
-                    <div class="head__img"></div>
-                    <div class="head__name">Name</div>
+                    <div class="head__img"><img src="src/man.png" style={{width:90+'px'}} /></div>
+                    <div class="head__name">{name}</div>
                 </div>
                 <div class="list">
                         <div class="list__item">

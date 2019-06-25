@@ -46,10 +46,14 @@ class Menu extends Component {
   }
 
   render() {
+    const { userData } = this.props
+    const { socket } = this.props
+    const { getUserData } = this.props
+
     const showFlag = () => {
       if(localStorage.getItem('type')!="one"){ 
         console.log("dsfeweq");
-        return( <Flag /> )
+        return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
       }
     }
     const { handleMain, handleSide, handleDrink, sum } = this.props

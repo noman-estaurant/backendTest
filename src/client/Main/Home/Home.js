@@ -133,7 +133,7 @@ class Home extends Component {
           <img class="pngfork"src="src/cutlery.png" alt="" />
         </div>
         <div class="foo" id="foo" />
-        <Tabbar />
+        <Tabbar coupon ={0} main={1} profile={0}/>
       </div>
     )
   }

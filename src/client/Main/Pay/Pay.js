@@ -21,6 +21,10 @@ class Pay extends Component {
   }
 
   render() {
+		const { showOrder} = this.props
+    const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
+    const sideMoney = showOrder().side.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
+    const drinkMoney = showOrder().drink.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     return (
       <div>
         <div class="main">
@@ -43,7 +47,7 @@ class Pay extends Component {
         </div>
         <div class="data">
 					<div class="total">總金額
-							<div class="howmuch">$ 160</div>
+							<div class="howmuch">{`$ ${mainMoney + sideMoney + drinkMoney}`}</div>
 					</div>
 					<div class="cardno">輸入卡號<br />
 						<div class="box">
