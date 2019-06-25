@@ -8,13 +8,12 @@ class Profile extends Component {
 
   render() {
     const { userData } = this.props
-    const { socket } = this.props
     const { getUserData } = this.props
     var name = localStorage.getItem('name');
     const showFlag = () => {
         if(localStorage.getItem('type')!="one"){ 
           console.log("dsfeweq");
-          return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
+          return( <Flag userData = {userData} getUserData ={getUserData}/> )
         }
       }
     return (

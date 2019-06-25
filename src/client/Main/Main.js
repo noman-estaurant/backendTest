@@ -18,7 +18,6 @@ import Final from './Final/Final'
 import Game from './Game/Game'
 import webSocket from 'socket.io-client'
 
-
 class Main extends Component {
   constructor(props) {
     super(props)
@@ -29,7 +28,7 @@ class Main extends Component {
       store: null,
       coupon: null,
       userData: {Master:false,id:'0',name:''},
-      socket:null
+      ws: webSocket('https://luffy.ee.ncku.edu.tw:17785')
     }
   }
 
@@ -110,7 +109,6 @@ class Main extends Component {
   }
 
   componentWillMount() {
-  //  const socket = io();
 
     if (window.location.href.indexOf('?') !== -1) {
       const id = window.location.href.split('=')[2]
@@ -134,7 +132,6 @@ class Main extends Component {
   }
 
   render() {
-    const socket = require('socket.io-client')('https://luffy.ee.ncku.edu.tw:17787');
     var userData={'Master':false};
 
     return (
@@ -162,7 +159,7 @@ class Main extends Component {
                 {...props}
                 {...localStorage.setItem('main', '/main/order/:id/menu')}
                 {...localStorage.setItem('tab', 'main')}
-                socket = { socket }                  
+             
                 userData = {userData}
                 getUserData = {this.getUserData}
 
@@ -170,6 +167,8 @@ class Main extends Component {
                 handleSide={this.handleSide}
                 handleDrink={this.handleDrink}
                 sum={this.state.main.length + this.state.side.length + this.state.drink.length}
+
+                ws={this.state.ws}
               />
             }
           />
@@ -191,11 +190,12 @@ class Main extends Component {
                 {...props}
                 {...localStorage.setItem('main', '/main/order/:id/many/host')}
                 {...localStorage.setItem('tab', 'main')}
-                socket = { socket }                  
                 setUser = {this.setUser}
                 userData = {userData}
 
                 handleBack={() => {window.location.href = '#/main/order/:id/many'}}
+                ws={this.state.ws}
+
               />
             }
           />
@@ -205,12 +205,13 @@ class Main extends Component {
                 {...props}
                 {...localStorage.setItem('main', '/main/order/:id/many/follow')}
                 {...localStorage.setItem('tab', 'main')}
-                socket = { socket }                  
                 setUser = {this.setUser}
                 userData = {userData}
                 getUserData = {this.getUserData}
 
                 handleBack={() => {window.location.href = '#/main/order/:id/many'}}
+                ws={this.state.ws}
+
               />
             }
           /> 
@@ -219,7 +220,6 @@ class Main extends Component {
             {...props}
             {...localStorage.setItem('main', '/main/shoppingcart')}
             {...localStorage.setItem('tab', 'main')}
-            socket = { socket }                  
             userData = {userData}
             getUserData = {this.getUserData}
 
@@ -227,12 +227,13 @@ class Main extends Component {
             showOrder={this.showOrder}
             deleteOrder={this.deleteOrder}
             sum={this.state.main.length + this.state.side.length + this.state.drink.length}
+            ws={this.state.ws}
+
             />}
           />
           <Route exact path='/main/profile' render={props =>
           <Profile
             {...props}
-            socket = { socket }                  
             userData = {userData}
             getUserData = {this.getUserData}
             {...localStorage.setItem('tab', 'profile')}
@@ -252,12 +253,13 @@ class Main extends Component {
             {...props}
             {...localStorage.setItem('main', '/main/checkout')}
             {...localStorage.setItem('tab', 'main')}
-            socket = { socket }                  
             userData = {userData}
             getUserData = {this.getUserData}
 
             handleBack={() => window.location.href = `#/main/order/${this.state.store}`}
             showOrder={this.showOrder}
+            ws={this.state.ws}
+
             />}
           />
           <Route path='/main/game' render={props =>

@@ -11,6 +11,7 @@ class ShoppingCart extends Component {
     super(props)
     this.state = {
       showMain: false,
+      ws:this.props.ws
     }
   }
 
@@ -21,13 +22,21 @@ class ShoppingCart extends Component {
     })
   }
 
+  componentDidMount(){
+    if(this.props.sum != 0){
+      var userData = {}
+      userData['id']=localStorage.getItem('room_id');
+      userData['name']=localStorage.getItem("name");
+      this.state.ws.emit('state_2',userData);
+    }
+  }
+
   render() {
     const { handleBack, showOrder, deleteOrder, sum } = this.props
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const sideMoney = showOrder().side.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const drinkMoney = showOrder().drink.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const { userData } = this.props
-    const { socket } = this.props
     const { getUserData } = this.props
     const type = localStorage.getItem('type')
 
@@ -35,7 +44,7 @@ class ShoppingCart extends Component {
     const showFlag = () => {
       if(localStorage.getItem('type')!="one"){ 
         console.log("dsfeweq");
-        return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
+        return( <Flag ws={this.state.ws}/> )      
       }
     }
     return (

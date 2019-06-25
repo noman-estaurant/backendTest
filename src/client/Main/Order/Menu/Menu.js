@@ -15,6 +15,7 @@ class Menu extends Component {
       this.state = {
         page: 0,
         header: '點餐',
+        ws:null,
         handleBack: () => {
           const id = window.location.hash.split('/')[3]
           window.location.href = `#/main/order/${id}`
@@ -26,6 +27,7 @@ class Menu extends Component {
       this.state = {
         page: 0,
         header: '揪團點餐',
+        ws: this.props.ws,
         handleBack: () => {
           const id = window.location.hash.split('/')[3]
           window.location.href = `#/main/order/${id}`
@@ -47,13 +49,12 @@ class Menu extends Component {
 
   render() {
     const { userData } = this.props
-    const { socket } = this.props
     const { getUserData } = this.props
 
     const showFlag = () => {
       if(localStorage.getItem('type')!="one"){ 
         console.log("dsfeweq");
-        return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
+        return( <Flag ws={this.state.ws}/> )      
       }
     }
     const { handleMain, handleSide, handleDrink, sum } = this.props

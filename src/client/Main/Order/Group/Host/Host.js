@@ -12,7 +12,8 @@ class Host extends Component {
     super(props)
     this.state = {
       seconds: 60,
-      groupid: 0
+      groupid: 539472,
+      ws:this.props.ws
     }
   }
 
@@ -21,8 +22,27 @@ class Host extends Component {
     if(this.state.seconds==0)
       window.location.href = '#/main/order/:id/'
   }
+
+  mkroom = () => {
+    var userData = {}
+    userData['name']=localStorage.getItem('name')
+    userData['id']= this.state.groupid
+    this.state.ws.emit('state_1',userData);
+    this.state.ws.emit('Mkroom',userData);
+
+    localStorage.setItem('room_id', this.state.groupid);
+
+    console.log("ccdddc")
+  }
+
+  handleID = () => {
+    var id=Math.floor(Math.random()*899999+100000)
+    this.setState({groupid: id})
+  }
+
   componentDidMount () {
     this.timer = setInterval(this.clock, 1000);
+    this.handleID()
     
   }
   componentWillUnmount(){
@@ -33,20 +53,8 @@ class Host extends Component {
     const { handleBack } = this.props
     const { setUser } = this.props
     const { userData } = this.props
-    const { socket } = this.props
     const { getUserData } = this.props
 
-    if(this.state.groupid==0){
-      userData['name']=localStorage.getItem('name')
-      socket.emit('Master',localStorage.getItem('name'));
-      socket.on('id_info',(id)=>{
-        userData['id']=id;
-        userData['Master']=true;
-        setUser(true,id,localStorage.getItem('name'))
-        this.setState({groupid: id});
-      });
-      socket.emit('state_1',userData);
-    }
     return (
       <div>
         <Navigationbar handleBack={this.props.handleBack} header={'開團'} cart={0} template={1}/>
@@ -56,6 +64,7 @@ class Host extends Component {
             <div class="time-content">{this.state.seconds }</div>
         </div>
         <div class="finish"onClick={() => {
+              this.mkroom()
               window.location.href = `#/main/order/${id}/menu`
             }}>完成</div>
       </div>

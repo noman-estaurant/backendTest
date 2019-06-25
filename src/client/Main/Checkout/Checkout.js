@@ -8,8 +8,17 @@ class Checkout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      modalon: false
+      modalon: false,
+      ws:this.props.ws
+
     }
+  }
+
+  handlestate = () =>{
+    var userData = {}
+    userData['id']=localStorage.getItem('room_id');
+    userData['name']=localStorage.getItem("name");
+    this.state.ws.emit('state_3',userData);
   }
 
   componentDidMount() {
@@ -87,13 +96,12 @@ class Checkout extends Component {
     const { showOrder } = this.props
     const mainMoney = showOrder().main.reduce((accumulator, currentValue) => accumulator + currentValue.money, 0)
     const { userData } = this.props
-    const { socket } = this.props
     const { getUserData } = this.props
 
     const showFlag = () => {
       if(localStorage.getItem('type')!="one"){ 
         console.log("dsfeweq");
-        return( <Flag userData = {userData} socket = {socket} getUserData ={getUserData}/> )
+        return( <Flag ws={this.state.ws}/> )      
       }
       
     }
@@ -161,7 +169,8 @@ class Checkout extends Component {
                     modalon: false
                   })
             }}>取消</div>
-            <div class="finish" onClick={() => {  
+            <div class="finish" onClick={() => { 
+                  this.handlestate() 
                   $("#check").hide()
                   $("#game").show()  
                   }}>完成</div>

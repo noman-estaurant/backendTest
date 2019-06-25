@@ -6,14 +6,7 @@ const config = require('../../setting/config')
 
 const api = require('../../api/index')
 
-var app = require('express')();
-var http = require('http').Server(app);
-
-var userState={};//存當前使用者是誰
-var peopleinroom={};//存有幾個人在房間
-var finishcouter={};//存有幾個人完成第三步走
-var roomIdList=[];//存server所有房間ID
-var id;
+const app = express()
 
 const options = {
   ca : fs.readFileSync(config.ssl.ca),
@@ -36,68 +29,100 @@ app.use(express.static('dist'))
 
 app.use('/api', api)
 
-const server = https.createServer(options, app).listen(17787, () => {
+const server = https.createServer(options, app)
+
+const io = require('socket.io')(server);
+var userState={}
+var peopleinroom={}
+var NumInRoom = {}
+var finishcouter={}
+var roomIdList=[]
+var WhoisIn = []
+var anymousID = 0
+
+
+
+io.on('connection', (socket) => {
+    console.log('Hello!');
+    socket.on('Mkroom',(Data)=>{
+        roomIdList.push(Data.id.toString());
+        socket.join(Data.id);
+        peopleinroom[Data.id] = []
+        NumInRoom[Data.id] = 1
+        finishcouter[Data.id]=0
+
+        userState['name']=Data.name;
+        userState['id']=Data.id.toString();
+
+        if (Data.name == null) Data.name = "anymous" + (++anymousID).toString()
+        peopleinroom[Data.id].push(Data.name)
+        io.to(Data.id).emit('change',peopleinroom[Data.id]);
+
+        console.log(userState.name+' creates '+roomIdList)
+        console.log(peopleinroom[Data.id])
+    })
+    
+
+    socket.on('Inroom',(Data)=>{
+        if (roomIdList.indexOf(Data.id)===-1){
+            socket.emit('donotexist')
+            console.log("no room")
+        }
+        else
+        {   
+            var room_index = roomIdList.indexOf(Data.id.toString())
+            socket.join(Data.id);
+
+            if (Data.name == null) Data.name = "anymous" + (++anymousID).toString()
+            peopleinroom[Data.id].push(Data.name)
+
+            io.to(Data.id).emit('isFollow',Data);
+            console.log(Data.name+" is in "+Data.id);
+            //userData constructor
+            NumInRoom[Data.id] ++
+            userState['name']=Data.name;
+            userState['id']=Data.id;
+
+            io.to(Data.id).emit('change',peopleinroom[Data.id]);
+            console.log(peopleinroom[Data.id]);
+        }
+    });
+    
+    socket.on('state_1',(userData)=>{
+        if (userData.name == null) userData.name = "anymous" 
+        console.log(userData.name + " is in state 1")
+        io.to(userData.id).emit('state_1_res',userData.name);
+    });
+    
+    socket.on('state_2',(userData)=>{
+        if (userData.name == null) userData.name = "anymous" 
+        console.log(userData.name + " is in state 2")
+        io.to(userData.id).emit('state_2_res',userData);
+    });
+    socket.on('state_3',(userData)=>{
+        if (userData.name == null) userData.name = "anymous" 
+        finishcouter[userData.id]++;
+        console.log(userData.name + " is in state 3")
+        io.to(userData.id).emit('state_3_res',userData.name);
+    });
+    
+    socket.on('send',(Data)=>{
+        if(finishcouter[Data.id]>= NumInRoom[Data.id] && Data.Master){
+            console.log("Success!");
+        }
+        else{
+            socket.emit('not ok',Data);
+        }
+    });
+    socket.on('disconnect', () => {
+        console.log('Bye~'); 
+    });
+    
+});
+ 
+
+
+server.listen(17785, () => {
   console.log(`listen on port:17785`)
 })
 
-var io = require('socket.io')(server)
-
-io.on('connection', (socket) => {
-  console.log('Hello!');//打個招呼
-  socket.on('open room',(Data)=>{//加入房間
-      if (roomIdList.indexOf(Data.id)===-1){
-          socket.emit('donotexist')//判斷房間ID是否存在
-      }
-      else//將使用者加入房間，這邊會回傳什麼使用者加入的資料給前端
-      {
-          socket.join(Data.id);
-          peopleinroom[Data.id]++;
-          io.to(Data.id).emit('inroom',Data);
-          console.log(Data.name+" is in "+Data.id);
-          //userData constructor
-          userState['name']=Data.name;
-          userState['id']=Data.id;
-          console.log(peopleinroom[Data.id]);
-      }
-  });
-  //判斷到第幾部分，這邊會回傳一個"state_(第幾步)_res"的事件給前端
-  socket.on('state_1',(userData)=>{
-      console.log(userData)
-      console.log(userData.name+" is in 111"+userData.id);
-      io.to(userData.id).emit('state_1_res',userData);
-  });
-  socket.on('state_2',(userData)=>{
-      io.to(userData.id).emit('state_2_res',userData);
-  });
-  socket.on('state_3',(userData)=>{
-      finishcouter[userData.id]++;
-      io.to(userData.id).emit('state_3_res',userData);
-  });
-  //室長創建房間，這邊會回傳ID資訊給前端
-  socket.on('Master',(Data)=>{
-      id=Math.floor(Math.random()*899999+100000);
-      roomIdList.push(id.toString());
-      socket.join(id);
-      peopleinroom[id]=1;
-      finishcouter[id]=0;
-      socket.emit('id_info',id.toString());
-      userState['name']=Data.name;
-      userState['id']=id.toString();
-      console.log(userState.name+' creates '+roomIdList)
-  })
-  //準備送出訂單
-  socket.on('send',(Data)=>{
-      if(finishcouter[Data.id]>=peopleinroom[Data.id] && Data.Master){
-          //跳到結帳頁面
-          console.log("Success!");
-      }
-      else{
-          socket.emit('not ok',Data);
-      }
-  });
-  
-  socket.on('disconnect', () => {
-      peopleinroom[id]--;
-      console.log('Bye~'); 
-  });
-});
