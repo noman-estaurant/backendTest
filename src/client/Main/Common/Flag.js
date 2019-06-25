@@ -9,10 +9,10 @@ class Flag extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            peopleinroom:['a','b','c'],
+            peopleinroom:[],
             peopleinstate1:[],
-            peopleinstate2:['c','a'],
-            peopleinstate3:['b','a'],
+            peopleinstate2:[],
+            peopleinstate3:[],
             finishcouter:{},
             userState:{},
             open:0,
@@ -105,32 +105,37 @@ class Flag extends Component {
     const done = this.state.peopleinstate3.length
     const all = this.state.peopleinroom.length
     if(this.state.open==1){
-        // console.log(socket);
-        // //this.state.peopleinstate1.splice(this.state.peopleinstate1.indexOf(""), 1); 
-        // socket.on('inroom',(Data)=>{
-        //     console.log('inroom',Data)
-        //      this.setState({
-        //         peopleinroom: [...this.state.peopleinroom,Data.name]
-        //     })
-        // });
-        // socket.on('state_1_res',(Data)=>{
-        //     console.log('inroom',Data)
-        //     this.setState({
-        //         peopleinstate1: [...this.state.peopleinstate1,Data.name]
-        //     })
-        // });
-        // socket.on('state_2_res',(Data)=>{
-        //     console.log('inroom',Data)
-        //     this.setState({
-        //         peopleinstate2: [...this.state.peopleinstate2,Data.name]
-        //     })
-        // });
-        // socket.on('state_3_res',(Data)=>{
-        //     console.log('inroom',Data)
-        //     this.setState({
-        //         peopleinstate3: [...this.state.peopleinstate3,Data.name]
-        //     })
-        // });
+        //this.state.peopleinstate1.splice(this.state.peopleinstate1.indexOf(""), 1); 
+        socket.on('inroom',(Data)=>{
+            console.log('inroom',Data)
+             this.setState({
+                peopleinroom: Data
+            })
+        });
+        socket.on('state_1_res',(Data)=>{
+            console.log('111',Data)
+            this.setState({
+                peopleinstate1: [...this.state.peopleinstate1,Data]
+            })
+        });
+        socket.on('state_2_res',(Data)=>{
+            console.log('222',Data)
+            this.setState({
+                peopleinstate2: [...this.state.peopleinstate2,Data]
+            })
+        });
+        socket.on('state_3_res',(Data)=>{
+            console.log('333',Data)
+            this.setState({
+                peopleinstate3: [...this.state.peopleinstate3,Data]
+            })
+        });
+        console.log('1',this.state.peopleinstate1);
+
+        console.log('2',this.state.peopleinstate2);
+
+        console.log('3',this.state.peopleinstate3);
+
     }     
   
     
