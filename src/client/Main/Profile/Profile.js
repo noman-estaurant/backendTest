@@ -13,7 +13,7 @@ class Profile extends Component {
     const showFlag = () => {
         if(localStorage.getItem('type')!="one"){ 
           console.log("dsfeweq");
-          return( <Flag userData = {userData} getUserData ={getUserData}/> )
+          return( <Flag ws={this.props.ws}/> )
         }
       }
     return (

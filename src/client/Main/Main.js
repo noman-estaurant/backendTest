@@ -237,6 +237,7 @@ class Main extends Component {
             userData = {userData}
             getUserData = {this.getUserData}
             {...localStorage.setItem('tab', 'profile')}
+            ws={this.state.ws}
             />}
           />
            <Route exact path='/main/coupon' render={props =>
